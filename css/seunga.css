@@ -216,6 +216,7 @@ header img {
 .fa-solid {
   display: none;
 }
+
 /* 모바일 메뉴 햄버거  */
 .mbt {
   display: none;
@@ -366,6 +367,7 @@ header img {
 .fa-solid {
   /* display: none; */
 }
+
 .counter-wrapper {
   width: 100%;
   height: auto;

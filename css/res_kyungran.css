@@ -22,7 +22,7 @@
    } 
    /* 탭메뉴 가로설정 */
    .tab-nav-wrapper {
-    /* width: 500px; */
+    width: 585px !important;
   }
   .FAQ-box .FAQ .FAQ-small-box {
     bottom: auto;
@@ -31,8 +31,51 @@
   height: 238px;
   }
 }
-@media all and (max-width: 650px) {
+@media all and (max-width: 710px) {
     .section2 .list-wrap .img-box:nth-child(3) {
         display: none;
       }
 } 
+@media all and (max-width: 660px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 521px !important;
+  }
+}
+@media all and (max-width: 600px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 380px !important;
+  }
+}
+@media all and (max-width: 450px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 305px !important;
+  }
+}
+@media all and (max-width: 390px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 290px !important;
+  }
+}
+@media all and (max-width: 360px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 270px !important;
+  }
+}
+@media all and (max-width: 340px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 220px !important;
+  }
+}
+@media all and (max-width: 280px) {
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
+    width: 180px !important;
+  }
+}
+
