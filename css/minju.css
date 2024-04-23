@@ -50,8 +50,11 @@
 }
 /* ===================================================== */
 /* 움직이는 텍스트 */
+.section5{
+  width: 100%;
+}
 .section5 .content img {
-  width: 85%;
+  width: 100%;
 }
 .animated-title {
   position: relative;
@@ -105,15 +108,19 @@ footer .right h1 {
 footer .right p {
   line-height: 1.5;
   text-align: left;
+  letter-spacing: 2px;
 }
 footer .left {
   float: right;
   margin: 30px;
 }
-footer .left i{
+footer .left .tell {
+  width: 100%;
   display: block;
-  font-size: 3vw;
+  font-size: 2.5vw;
   text-align: right;
+  font-family: "KBO-Dia-Gothic_medium";
+  letter-spacing: 2px;
 }
 footer .left button {
   width: 130px;
@@ -122,11 +129,17 @@ footer .left button {
   background-color: #333;
   border: 1px solid #fff;
   color: #fff;
+  font-family: "KBO-Dia-Gothic_medium";
+  letter-spacing: 2px;
 }
+.line {
+  display: none;
+}
+
 /* ================================================ */
 /* flying baneer */
 /* top 버튼 */
-.top-button {
+/* .top-button {
   position: fixed;
   right: 30px;
   top: 100px;
@@ -138,11 +151,12 @@ footer .left button {
 }
 .top-button .chat-btn {
   animation: updown 1.5s infinite;
-  /* -webkit-animation:updown 1.5s infinite; */
-  /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
-}
+} */
+/* -webkit-animation:updown 1.5s infinite; */
+/* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
+
 /* 애내메이션 효과 */
-@keyframes updown {
+/* @keyframes updown {
   0% {
     transform: translatey(0);
   }
@@ -152,24 +166,29 @@ footer .left button {
   100% {
     transform: translatey(0);
   }
-}
+} */
 /* =================================================== */
 /* 참여하기 */
 
-.takejoin{
+.takejoin {
   width: 100%;
   position: fixed;
-  background-color: #fff;
+  background-color: #ffffff00;
   bottom: 0px;
-  transition: top 0.3s ease-in-out; 
+  transition: top 0.3s ease-in-out;
+  display: none;
 }
-.takejoin .heart{
-  width: 80%;
+.takejoin button {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
   height: 100px;
   background-color: #ff4949;
   color: #fff;
   border: none;
-  font-size: 2vw;
+  font-size: 3vw;
+  border-radius: 50px;
+  outline: none;
 }
 
 /* =================================================== */
@@ -182,6 +201,14 @@ footer .left button {
     left: 295px;
   }
 }
+.section5 .content img {
+  width: 100%;
+}
+.animated-title {
+  margin-top: -2%;
+  padding-bottom: 5%;
+
+  }
 /* ===================================================== */
 @media screen and (max-width: 859px) {
   footer {
@@ -197,10 +224,13 @@ footer .left button {
   footer .left {
     float: left;
   }
-  footer .left i{
+  footer .left .tell {
+    width: 100%;
     display: block;
-    font-size: 5vw;
+    font-size: 4vw;
     text-align: left;
+    font-family: "KBO-Dia-Gothic_medium";
+    letter-spacing: 2px;
   }
   footer .left button {
     width: 130px;
@@ -209,6 +239,8 @@ footer .left button {
     background-color: #333;
     border: 1px solid #fff;
     color: #fff;
+    font-family: "KBO-Dia-Gothic_medium";
+    letter-spacing: 2px;
   }
   footer .line {
     width: 100%;
@@ -219,6 +251,10 @@ footer .left button {
 }
 /* ===================================================== */
 @media screen and (max-width: 768px) {
+  .animated-title {
+    margin-top: -2%;
+    margin-bottom: -2%;
+    }
   .section4 .snstext {
     display: block;
     width: 100%;
@@ -266,11 +302,13 @@ footer .left button {
   footer .left {
     float: left;
   }
-  footer .left i{
+  footer .left .tell {
+    width: 100%;
     display: block;
     font-size: 4vw;
     text-align: left;
-  }
+    font-family: "KBO-Dia-Gothic_medium";
+    letter-spacing: 2px;
   }
   footer .left button {
     width: 130px;
@@ -279,6 +317,8 @@ footer .left button {
     background-color: #333;
     border: 1px solid #fff;
     color: #fff;
+    font-family: "KBO-Dia-Gothic_medium";
+    letter-spacing: 2px;
   }
   footer .line {
     width: 100%;
@@ -286,26 +326,38 @@ footer .left button {
     background-color: #fff;
     margin-top: 10%;
   }
+  .line {
+    display: block;
+  }
+}
 /* ==================================================== */
-@media  screen and (max-width: 480px){
-/* 참여하기 */
+@media screen and (max-width: 480px) {
+  /* 참여하기 */
 
-.takejoin{
-  width: 100%;
-  position: fixed;
-  background-color: #fff;
-  bottom: 0px;
-  transition: top 0.3s ease-in-out; 
-}
-
-.takejoin .heart{
-  width: 80%;
-  height: 100px;
-  background-color: #ff4949;
-  color: #fff;
-  border: none;
-  font-size: 5vw;
-}
+  .takejoin {
+    width: 100%;
+    position: fixed;
+    background-color: #ffffff00;
+    bottom: 0px;
+    transition: top 0.3s ease-in-out;
+    display: block;
+  }
+  .takejoin button {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    height: 80px;
+    background-color: #ff4949;
+    color: #fff;
+    border: none;
+    font-size: 5vw;
+    border-radius: 50px;
+    z-index: 9999999;
+    display: block;
+  }
+  .line {
+    display: block;
+  }
 }
 /* ==================================================== */
 @media screen and (max-width: 320px) {
@@ -346,7 +398,7 @@ footer .left button {
   }
   footer {
     width: 100%;
-    height: 410px;
+    height: 450px;
   }
   footer .right h1 {
     font-family: "UhBeeSe_hyun";
@@ -363,16 +415,30 @@ footer .left button {
   }
   footer .right p {
     line-height: 1.5;
-    font-size: 13px;
+    font-size: 15px;
   }
-  footer .left{
-      margin: 0 auto;
+  footer .left {
+    margin: 0 auto;
     text-align: center;
     width: 100%;
   }
-  footer .left i {
+  footer .left .tell {
+    width: 100%;
+    display: block;
     font-size: 10vw;
     text-align: center;
+    font-family: "KBO-Dia-Gothic_medium";
+    letter-spacing: 2px;
+  }
+  footer .left button {
+    width: 100px;
+    height: 50px;
+    margin: 20px 5px;
+    background-color: #333;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: "KBO-Dia-Gothic_medium";
+    letter-spacing: 2px;
   }
   footer .line {
     width: 250px;
