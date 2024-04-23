@@ -65,6 +65,9 @@ form button {
   width: 10%;
   margin: 5%;
 }
+.line{
+  display: none;
+}
 /* 반응형 */
 @media screen and (max-width: 1000px) {
   form button{
@@ -111,6 +114,9 @@ form button {
     margin: 15px 0;
     font-size: 14px;
   }
+  .line{
+    display: block;
+  }
 }
 @media screen and (max-width: 320px){
   .login{
@@ -123,5 +129,8 @@ form button {
     font-size: 4vw;
     padding: 0%;
     height: 5vh;
+}
+.line{
+  display: block;
 }
 }
