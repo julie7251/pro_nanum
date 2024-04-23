@@ -56,6 +56,7 @@ h4 {
   padding: 10% 0 10% 2%;
   font-size: 36px;
   text-align: left;
+  color: red;
 }
 /* 로그인버튼 */
 /* 기본 스타일 */
@@ -65,7 +66,6 @@ h4 {
   height: 100vh;
   box-sizing: border-box;
 } */
-
 .wrap {
   display: flex;
   justify-content: center;
