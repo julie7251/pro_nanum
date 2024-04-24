@@ -69,7 +69,10 @@ hr {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
+  }
+  from {
+    transform: translateX(0%);
   }
 }
 @media (hover: hover) and (min-width: 700px) {
@@ -115,6 +118,7 @@ footer .right p {
 footer .left {
   float: right;
   margin: 30px;
+  margin-top: 5%;
 }
 footer .left i {
   display: block;
