@@ -1,120 +1,70 @@
-(function ($) {
-    // 햄버거 작동 및 상단 스크롤 기능
-    window.onload = function () {
-      const header = document.querySelector(".header");
-      const mbt = document.querySelector(".mbt");
-      const navMb = document.querySelector(".nav-mb");
-      const htmlRoot = document.querySelector("html");
-      let scy = 0;
-  
-      mbt.addEventListener("click", function () {
-        const state = this.classList.contains("ani");
-        if (state) {
-          this.classList.remove("ani");
-          navMb.classList.remove("active");
-          htmlRoot.classList.remove("active");
-        } else {
-          this.classList.add("ani");
-          navMb.classList.add("active");
-          htmlRoot.classList.add("active");
-        }
+document.addEventListener("DOMContentLoaded", function () {
+  // 각 메뉴 아이템을 가져옵니다.
+  var serviceMenuItem = document.querySelector(".top-menu li:nth-child(1) a");
+  var programMenuItem = document.querySelector(".top-menu li:nth-child(2) a");
+  var boardMenuItem = document.querySelector(".top-menu li:nth-child(3) a");
+  var reviewMenuItem = document.querySelector(".top-menu li:nth-child(4) a");
+
+  // 서비스 소개 메뉴 클릭 시 스크롤 이벤트를 추가합니다.
+  serviceMenuItem.addEventListener("click", function (e) {
+    e.preventDefault();
+    scrollToElement(".section1");
+  });
+
+  // 프로그램 메뉴 클릭 시 스크롤 이벤트를 추가합니다.
+  programMenuItem.addEventListener("click", function (e) {
+    e.preventDefault();
+    scrollToElement(".section2");
+  });
+
+  // 게시판 메뉴 클릭 시 스크롤 이벤트를 추가합니다.
+  boardMenuItem.addEventListener("click", function (e) {
+    e.preventDefault();
+    scrollToElement(".section3");
+  });
+
+  // 후기 메뉴 클릭 시 스크롤 이벤트를 추가합니다.
+  reviewMenuItem.addEventListener("click", function (e) {
+    e.preventDefault();
+    scrollToElement(".section4");
+  });
+
+  // 지정된 요소로 스크롤하는 함수를 정의합니다.
+  function scrollToElement(selector) {
+    var element = document.querySelector(selector);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth",
       });
-    };
-  
-    // jQuery countTo 플러그인 초기화
-    $.fn.countTo = function (options) {
-      options = options || {};
-  
-      return $(this).each(function () {
-        var settings = $.extend(
-          {},
-          $.fn.countTo.defaults,
-          {
-            from: $(this).data("from"),
-            to: $(this).data("to"),
-            speed: $(this).data("speed"),
-            refreshInterval: $(this).data("refresh-interval"),
-            decimals: $(this).data("decimals"),
-          },
-          options
-        );
-  
-        var loops = Math.ceil(settings.speed / settings.refreshInterval),
-          increment = (settings.to - settings.from) / loops;
-  
-        var self = this,
-          $self = $(this),
-          loopCount = 0,
-          value = settings.from,
-          data = $self.data("countTo") || {};
-  
-        $self.data("countTo", data);
-  
-        if (data.interval) {
-          clearInterval(data.interval);
-        }
-        data.interval = setInterval(updateTimer, settings.refreshInterval);
-  
-        render(value);
-  
-        function updateTimer() {
-          value += increment;
-          loopCount++;
-  
-          render(value);
-  
-          if (typeof settings.onUpdate == "function") {
-            settings.onUpdate.call(self, value);
-          }
-  
-          if (loopCount >= loops) {
-            $self.removeData("countTo");
-            clearInterval(data.interval);
-            value = settings.to;
-  
-            if (typeof settings.onComplete == "function") {
-              settings.onComplete.call(self, value);
-            }
-          }
-        }
-  
-        function render(value) {
-          var formattedValue = settings.formatter.call(self, value, settings);
-          $self.html(formattedValue);
-        }
-      });
-    };
-  
-    $.fn.countTo.defaults = {
-      from: 0,
-      to: 0,
-      speed: 1000,
-      refreshInterval: 100,
-      decimals: 0,
-      formatter: formatter,
-      onUpdate: null,
-      onComplete: null,
-    };
-  
-    function formatter(value, settings) {
-      return value.toFixed(settings.decimals);
     }
-  })(jQuery);
-  
-  // custom formatting example
-  jQuery(function ($) {
-    $(".count-number").data("countToOptions", {
-      formatter: function (value, options) {
-        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
-      },
-    });
-  
-    $(".timer").each(count);
-  
-    function count(options) {
-      var $this = $(this);
-      options = $.extend({}, options || {}, $this.data("countToOptions") || {});
-      $this.countTo(options);
+  }
+
+  // 창 스크롤 이벤트 리스너를 추가합니다.
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector("header");
+    if (window.scrollY === 0) {
+      header.style.boxShadow = "none";
+    } else {
+      header.style.boxShadow = "-1px 2px 10px 4px rgba(0, 0, 0, 0.05)";
     }
   });
-  
+
+  // 카운터 초기화
+  $(".timer").each(function () {
+      var $this = $(this);
+      var countTo = $this.attr('data-to');
+      $({ countNum: $this.text() }).animate({
+          countNum: countTo
+      }, {
+          duration: 3000,
+          easing: 'linear',
+          step: function () {
+              $this.text(Math.floor(this.countNum));
+          },
+          complete: function () {
+              $this.text(this.countNum);
+          }
+      });
+  });
+});
