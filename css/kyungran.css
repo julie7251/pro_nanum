@@ -122,7 +122,7 @@
   display: inline-block;
   width: 10px;
   height: 6px;
-  background: url(../images/kyungran/toggle-arrow2.png) no-repeat;
+  background: url("../images/kyungran/toggle-arrow2.png") no-repeat;
   background-position: 0px 0px;
   margin-left: 6px;
   vertical-align: 2px;
@@ -332,9 +332,8 @@
   outline: none;
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat 0px 0px;
 }
-.CM-box .CM > span > a:hover .plus-icon {
+.CM-box .CM .plus-icon:hover {
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat bottom;
-  transition: all 0.2s;
 }
 .CM-box .CM li {
   font-size: 22px;
@@ -375,7 +374,7 @@
   outline: none;
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat 0px 0px;
 }
-.FAQ-box .FAQ > span > a:hover .plus-icon {
+.FAQ-box .FAQ .plus-icon:hover {
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat bottom;
 }
 .FAQ-box .FAQ .FAQ-small-box {
