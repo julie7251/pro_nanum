@@ -9,7 +9,8 @@ window.addEventListener("load", function () {
     navigation: {
       nextEl: ".swiper-button-next",
     },
-  });
+ 
+});
 
   // 스크롤 이벤트를 감지하여 메뉴의 상태를 변경하는 함수
   window.addEventListener("scroll", function () {
