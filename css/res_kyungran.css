@@ -7,11 +7,15 @@
   .section3 {
     padding: 0px 25px;
   }
-  .section3-inner {
+  .section3-wrap {
     gap: 25px;
   }
 }
-@media all and (max-width: 1170px) {
+@media all and (max-width: 1170px) { 
+   .section2 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
   .right-toggle {
     padding: 18px 0 11px;
   }
@@ -24,15 +28,13 @@
   .order-list {
   top: 44px;
   }
-  .section2 {
-    margin-top: 100px;
-  }
+
 }
 @media all and (max-width: 900px) {
   .section2 .list-wrap .img-box:nth-child(4) {
     display: none;
   }
-  .section3 .section3-inner {
+  .section3-inner{
     height: 100%;
     display: flex;
     flex-direction: column;
