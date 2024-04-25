@@ -11,31 +11,71 @@
     gap: 25px;
   }
 }
+@media all and (max-width: 1170px) {
+  .right-toggle {
+    padding: 18px 0 11px;
+  }
+  .area-list {
+  top: 44px;
+  }
+  .monthly-list {
+  top: 44px;
+  }
+  .order-list {
+  top: 44px;
+  }
+  .section2 {
+    margin-top: 100px;
+  }
+}
 @media all and (max-width: 900px) {
   .section2 .list-wrap .img-box:nth-child(4) {
     display: none;
   }
-   .section3 .section3-inner {
+  .section3 .section3-inner {
     height: 100%;
     display: flex;
-    flex-direction: column; 
-   } 
-   /* 탭메뉴 가로설정 */
-   .tab-nav-wrapper {
+    flex-direction: column;
+  }
+  /* 탭메뉴 가로설정 */
+  .tab-nav-wrapper {
     width: 585px !important;
+  }
+  .tab-nav a:hover {
+    background-color: #ffffff;
+    color: #292929;
+  }
+  .tab-nav a.active {
+    background-color: #1e6bf1;
+    color: #fff;
+    transition: all 0.3s;
   }
   .FAQ-box .FAQ .FAQ-small-box {
     bottom: auto;
   }
   .section3 .FAQ-box {
-  height: 238px;
+    height: 238px;
+  }
+}
+@media all and (max-width: 768px) {
+  .section-tite {
+    font-size: 32px;
+  }
+  .CM-box .CM span {
+    font-size: 32px;
+  }
+  .FAQ-box .FAQ span {
+    font-size: 32px;
   }
 }
 @media all and (max-width: 710px) {
-    .section2 .list-wrap .img-box:nth-child(3) {
-        display: none;
-      }
-} 
+  .section2 .list-wrap .img-box:nth-child(3) {
+    display: none;
+  }
+  .img-box .hart-icon {
+    bottom: -7px;
+}
+}
 @media all and (max-width: 660px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
@@ -45,13 +85,30 @@
 @media all and (max-width: 600px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 380px !important;
+    width: 400px !important;
+  }
+}
+@media screen and (max-width: 560px) {
+  .section-tite {
+    font-size: 28px;
+  }
+  .CM-box .CM span {
+    font-size: 28px;
+  }
+  .FAQ-box .FAQ span {
+    font-size: 28px;
+  }
+  .CM-box .CM li {
+    font-size: 19px;
+  }
+  .FAQ-box .FAQ .FAQ-small-box {
+    font-size: 19px;
   }
 }
 @media all and (max-width: 450px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 305px !important;
+    width: 310px !important;
   }
 }
 @media all and (max-width: 390px) {
@@ -59,11 +116,20 @@
   .tab-nav-wrapper {
     width: 290px !important;
   }
+  .section-tite{
+    font-size: 24px;
+  }
+  .CM-box .CM span {
+    font-size: 24px;
+  }
+  .FAQ-box .FAQ span {
+    font-size: 24px;
+  }
 }
 @media all and (max-width: 360px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 270px !important;
+    width: 279px !important;
   }
 }
 @media all and (max-width: 340px) {
@@ -78,4 +144,3 @@
     width: 180px !important;
   }
 }
-

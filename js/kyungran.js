@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
   var options = {
   horizontal: 1,
   itemNav: 'centered', //basic , centered,
-  speed: 300,
+  speed: 600,
   smart: 1,
      activateOn: 'click',
   mouseDragging: 1,
@@ -14,7 +14,8 @@ window.addEventListener("load", function () {
   activateMiddle: 1,
   releaseSwing: 1,
   activeClass:'activetop',
-  startAt: on
+  startAt: on,
+  easing: 'easeInOutQuart',
   // itemSelector:1
   };
 
