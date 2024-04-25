@@ -120,10 +120,15 @@ footer .left {
   margin: 30px;
   margin-top: 5%;
 }
-footer .left i {
+footer .left img{
+  width: 20%;
+}
+
+footer .left .tell {
   display: block;
   font-size: 3vw;
   text-align: right;
+  font-family: "KBO-Dia-Gothic_medium";
 }
 footer .left button {
   width: 130px;
@@ -204,6 +209,9 @@ footer .line {
   footer .line {
     display: none;
   }
+  footer .left img{
+    width: 15%;
+  }
 }
 /* ===================================================== */
 @media screen and (max-width: 859px) {
@@ -239,7 +247,7 @@ footer .line {
   footer .left {
     float: left;
   }
-  footer .left i {
+  footer .left .tell {
     display: block;
     font-size: 5vw;
     text-align: left;
@@ -314,7 +322,7 @@ footer .line {
     margin: 8%;
     margin-top: -3%;
   }
-  footer .left i {
+  footer .left .tell {
 
     display: block;
     font-size: 5vw;
@@ -400,9 +408,12 @@ footer .line {
     text-align: center;
     width: 100%;
   }
-  footer .left i {
+  footer .left .tell {
     font-size: 8vw;
     text-align: center;
+  }
+  footer .left img{
+    width: 10%;
   }
 }
 /* ==================================================== */
@@ -470,7 +481,7 @@ footer .line {
     text-align: center;
     width: 100%;
   }
-  footer .left i {
+  footer .left .tell {
     font-size: 8vw;
     text-align: center;
   }

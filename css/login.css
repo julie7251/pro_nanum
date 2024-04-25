@@ -1,10 +1,29 @@
 @charset "utf-8";
 /* 로그인 */
+/* 폰트 */
+@font-face {
+  font-family: "UhBeeSe_hyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSe_hyun.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KBO-Dia-Gothic_light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_light.woff") format("woff");
+}
+@font-face {
+  font-family: "KBO-Dia-Gothic_medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_medium.woff") format("woff");
+}
+@font-face {
+  font-family: "KBO-Dia-Gothic_bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff") format("woff");
+}
 header {
   height: 80px;
 }
 .logingform {
-  margin-top: 50px;
+  margin-top: 150px;
   margin-bottom: 50px;
 }
 .logingform h1 {
@@ -54,6 +73,10 @@ form button {
   cursor: pointer;
   line-height: 1;
 }
+form button a{
+  color: #fff;
+  text-decoration: none;
+}
 .loginbutton {
   margin-top: 3%;
 }
@@ -64,9 +87,6 @@ form button {
   display: inline;
   width: 10%;
   margin: 5%;
-}
-.line{
-  display: none;
 }
 /* 반응형 */
 @media screen and (max-width: 1000px) {
@@ -129,8 +149,5 @@ form button {
     font-size: 4vw;
     padding: 0%;
     height: 5vh;
-}
-.line{
-  display: block;
 }
 }
