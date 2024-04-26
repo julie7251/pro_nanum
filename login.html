@@ -70,7 +70,7 @@
             <input type="checkbox" class="remember-check" id="checkbox" />
             <label for="checkbox">아이디 저장하기</label>
           </div>
-          <button class="loginbutton"><a href="index.html">로그인</a></button>
+          <button class="loginbutton"><a href="index.html" id="alertBtn">로그인</a></button>
           <button class="joinbutton"><a href="join.html">회원가입</a></button>
           <div class="icon">
             <a href="#"><img src="images/minju/icon1.png" alt="카카오톡" /></a>
@@ -91,7 +91,6 @@
             <br />
             Copyright (C)나눔메이트. All rights reserved.
           </p>
-          <div class="line"></div>
         </div>
         <div class="left">
           <div class="tell"><img src="images/minju/tell.png" alt="tell" />문의하기</div>
@@ -119,7 +118,6 @@
           e.preventDefault(); //폼 제출 방지
           var userId = $("#user_id").val();
           var password = $("#user_pw").val();
-          var confirmPw = $("#confirm_pw").val();
           //   정규표현식을 사용한 유효성 검사
           var idPattern = /^[a-zA-Z0-9]{4,12}$/;
           var pwPattern = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}$/;
@@ -138,6 +136,10 @@
             $("#user_pw").next(".error").text("");
           }
         });
+        // 버튼을 클릭하면 얼럿 창을 띄우는 이벤트 처리
+    $("#alertBtn").click(function(){
+      alert("환영합니다! 로그인되었습니다.");
+    });
       });
     </script>
   </body>
