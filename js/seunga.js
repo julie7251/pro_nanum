@@ -35,11 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.remove("ani");
       // 메뉴가 나타날 때 스크롤이 되지 않도록 설정합니다.
       htmlRoot.classList.remove("active");
+      // top-nav의 이미지가 보이도록 설정합니다.
+      document.querySelector(".top-nav img").style.visibility = "visible";
     } else {
       // 햄버거 버튼을 눌렀을 때 x가 사라지도록 클래스를 제거합니다.
       this.classList.add("ani");
       // 메뉴가 나타날 때 스크롤이 되지 않도록 설정합니다.
       htmlRoot.classList.add("active");
+      // top-nav의 이미지가 안 보이도록 설정합니다.
+      document.querySelector(".top-nav img").style.visibility = "hidden";
     }
   });
 
@@ -98,4 +102,31 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.boxShadow = "-1px 2px 10px 4px rgba(0, 0, 0, 0.05)";
     }
   });
+ // top 버튼 스크롤 기능
+ const topBtn = document.getElementById("top-btn");
+ topBtn.addEventListener("click", function (event) {
+   event.preventDefault();
+   if (window.scrollY == 0) {
+     window.scrollTo({
+       top: 2952,
+       behavior: "smooth",
+     });
+   } else {
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth",
+     });
+   }
+ });
+
+ // 화살표 이미지 회전
+ const topBtnImg = document.getElementById("top-btn-img");
+ window.addEventListener("scroll", function () {
+   const scTop = window.document.documentElement.scrollTop;
+   if (scTop > 0) {
+     topBtnImg.classList.add("up");
+   } else {
+     topBtnImg.classList.remove("up");
+   }
+ });
 });
