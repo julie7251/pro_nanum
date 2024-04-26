@@ -60,10 +60,10 @@
       <div class="login">
         <h1>로그인</h1>
         <form id="signupForm">
-          <input type="text" name="userName" placeholder="아이디" id="user_id" />
+          <input type="text" name="userName" placeholder="아이디" id="user_id"required/ />
           <span class="error"></span>
           <!-- 에러메시지 출력할 요소 -->
-          <input type="text" name="userPassword" placeholder="비밀번호" id="user_pw" />
+          <input type="text" name="userPassword" placeholder="비밀번호" id="user_pw"required/ />
           <span class="error"></span>
           <!-- 에러메시지 출력할 요소 -->
           <div class="check">
@@ -99,12 +99,6 @@
         </div>
       </div>
     </footer>
-    <!-- flying banner
-    <div class="top-button">
-      <a href="#" class="chat-btn">
-        <img src="images/minju/fly.png" alt="chat" />
-      </a> -->
-    <!--  -->
     <script>
       $(document).ready(function () {
         $("#user_id ,#user_pw ,#confirm_pw").on("focus", function () {
@@ -137,9 +131,9 @@
           }
         });
         // 버튼을 클릭하면 얼럿 창을 띄우는 이벤트 처리
-    $("#alertBtn").click(function(){
-      alert("환영합니다! 로그인되었습니다.");
-    });
+        $("#alertBtn").click(function () {
+          alert("환영합니다! 로그인되었습니다.");
+        });
       });
     </script>
   </body>
