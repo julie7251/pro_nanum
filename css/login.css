@@ -22,6 +22,15 @@
 header {
   height: 80px;
 }
+ /* 테두리 강조 스타일 */
+ .focused {
+  border: 2px solid #007bff;
+  outline: none; /* 포커스 테두리 제거 */
+}
+.error {
+  color: red;
+  font-size: 1vw;
+}
 .logingform {
   margin-top: 150px;
   margin-bottom: 50px;
@@ -95,6 +104,10 @@ form button a{
   }
   }
   @media screen and (max-width: 768px) {
+    .error {
+      color: red;
+      font-size: 1.5vw;
+    }
     .login{
       width: 50%;
     }
@@ -113,6 +126,10 @@ form button a{
     }
     }
     @media screen and (max-width: 480px){
+      .error {
+        color: red;
+        font-size: 2vw;
+      }
       .login{
         width: 70%;
       }
@@ -122,13 +139,12 @@ form button a{
     }
     form button{
       font-size: 3vw;
-      padding: 0%;
-      height: 5vh;
   }
   .icon img {
     display: inline;
-    width: 15%;
-    margin: 5%;
+    width: 20%;
+    margin: 2%;
+    padding: 4%;
   }
   form .check{
     margin: 15px 0;
@@ -139,6 +155,10 @@ form button a{
   }
 }
 @media screen and (max-width: 320px){
+  .error {
+    color: red;
+    font-size: 2.5vw;
+  }
   .login{
     width: 70%;
   }
@@ -147,7 +167,9 @@ form button a{
   }   
    form button{
     font-size: 4vw;
-    padding: 0%;
-    height: 5vh;
+}
+footer{
+  width: 100%;
+  height: 420px;
 }
 }

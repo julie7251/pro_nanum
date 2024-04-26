@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="css/login.css" />
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -57,9 +59,13 @@
     <div class="logingform">
       <div class="login">
         <h1>로그인</h1>
-        <form>
-          <input type="text" name="userName" placeholder="아이디" />
-          <input type="text" name="userPassword" placeholder="비밀번호" />
+        <form id="signupForm">
+          <input type="text" name="userName" placeholder="아이디" id="user_id" />
+          <span class="error"></span>
+          <!-- 에러메시지 출력할 요소 -->
+          <input type="text" name="userPassword" placeholder="비밀번호" id="user_pw" />
+          <span class="error"></span>
+          <!-- 에러메시지 출력할 요소 -->
           <div class="check">
             <input type="checkbox" class="remember-check" id="checkbox" />
             <label for="checkbox">아이디 저장하기</label>
@@ -100,5 +106,39 @@
         <img src="images/minju/fly.png" alt="chat" />
       </a> -->
     <!--  -->
+    <script>
+      $(document).ready(function () {
+        $("#user_id ,#user_pw ,#confirm_pw").on("focus", function () {
+          $(this).addClass("focused");
+        });
+        $("#user_id ,#user_pw ,#confirm_pw").on("blur", function () {
+          $(this).removeClass("focused");
+        });
+        // 회원가입 필드에서 값 가져오기
+        $("#signupForm").submit(function (e) {
+          e.preventDefault(); //폼 제출 방지
+          var userId = $("#user_id").val();
+          var password = $("#user_pw").val();
+          var confirmPw = $("#confirm_pw").val();
+          //   정규표현식을 사용한 유효성 검사
+          var idPattern = /^[a-zA-Z0-9]{4,12}$/;
+          var pwPattern = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}$/;
+          // 아이디 유효성 검사
+          if (!idPattern.test(userId)) {
+            $("#user_id").next(".error").text("사용자 ID는 영문자와 숫자로만 이루어진 4~12자여야 합니다.");
+            return;
+          } else {
+            $("#user_id").next(".error").text("");
+          }
+          //   비밀번호 확인 검사
+          if (!pwPattern.test(password)) {
+            $("#user_pw").next(".error").text("비밀번호는 영문자와 숫자의 조합으로 6~12자여야 합니다.");
+            return;
+          } else {
+            $("#user_pw").next(".error").text("");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
