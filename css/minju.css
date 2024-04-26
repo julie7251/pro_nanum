@@ -1,4 +1,33 @@
 @charset "utf-8";
+/* <!-- 탑버튼 --> */
+.top-button {
+  position: relative;
+    z-index: 999999;
+    display: block;
+  }
+  .top-button .top-btn {
+    display: block;
+      position: fixed;
+        bottom: 15%;
+    right: 3.2%;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #134aa9;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .top-btn img{
+    width: 50%;
+  }
+  .top-button .top-btn img {
+    transform: rotate(180deg);
+  }
+  .top-button .top-btn img.up {
+    transform: rotate(0deg);
+  }
+/* =============================================== */
 /* 민주 */
 .inner {
   max-width: 1400px;
@@ -53,7 +82,8 @@ hr {
   width: 100%;
   max-width: 100%;
   height: auto;
-  padding: 2%;
+  padding: 5%;
+  margin-bottom: -5%;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -139,7 +169,7 @@ footer .left button {
   font-family: "KBO-Dia-Gothic_light";
   letter-spacing: 2px;
 }
-footer p{
+footer p {
   letter-spacing: 2px;
 }
 footer .line {
@@ -147,18 +177,21 @@ footer .line {
 }
 /* ================================================ */
 /* flying baneer */
-/* top 버튼 */
-.top-button {
+/* 신청하기 버튼 */
+.pop-button {
   position: fixed;
   right: 30px;
-  top: 100px;
+  bottom:  20%;
   z-index: 99999;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-.top-button .chat-btn {
+.pop-button img{
+  width:80%;
+}
+.pop-button .chat-btn {
   animation: updown 1.5s infinite;
   /* -webkit-animation:updown 1.5s infinite; */
   /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
@@ -207,7 +240,7 @@ footer .line {
     margin-top: -4%;
     margin-bottom: 0%;
   }
-  .top-button {
+  .pop-button {
     display: none;
   }
   footer .line {
@@ -236,7 +269,7 @@ footer .line {
     height: 500px;
     width: 100%;
   }
-  footer .right{
+  footer .right {
     margin: 3%;
     margin-top: 1%;
   }
@@ -254,7 +287,8 @@ footer .line {
   }
   footer .left {
     float: left;
-    margin: 8%;  }
+    margin: 8%;
+  }
 
   footer .left .tell {
     margin-top: -20%;
@@ -272,7 +306,7 @@ footer .line {
     font-family: "KBO-Dia-Gothic_light";
     letter-spacing: 2px;
   }
-  footer p{
+  footer p {
     letter-spacing: 2px;
   }
   footer p::after {
@@ -344,25 +378,25 @@ footer .line {
     text-align: left;
   }
 
-footer .left button {
-  width: 130px;
-  height: 50px;
-  margin: 20px 5px;
-  background-color: #333;
-  border: 1px solid #fff;
-  color: #fff;
-}
-footer p{
-  letter-spacing: 2px;
-}
-footer p::after {
-  content: "";
-  display: block;
-  width: 130%;
-  height: 1px;
-  background-color: #fff;
-  margin-top: 8%;
-}
+  footer .left button {
+    width: 130px;
+    height: 50px;
+    margin: 20px 5px;
+    background-color: #333;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  footer p {
+    letter-spacing: 2px;
+  }
+  footer p::after {
+    content: "";
+    display: block;
+    width: 130%;
+    height: 1px;
+    background-color: #fff;
+    margin-top: 8%;
+  }
 }
 /* ==================================================== */
 @media screen and (max-width: 480px) {
@@ -518,7 +552,7 @@ footer p::after {
     font-size: 8vw;
     text-align: center;
   }
-  footer .left img{
+  footer .left img {
     width: 10%;
   }
   footer .left button {
