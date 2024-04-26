@@ -337,7 +337,7 @@ nav {
 /* <!-- 섹션1 --> */
 
 .section1 {
-  padding: 8% 0 4% 0;
+  padding: 6% 0 4% 0;
   background-color: #fff;
   width: 100%;
   color: #fff;
@@ -391,7 +391,7 @@ nav {
   justify-content: space-between;
   gap: 6%;
   margin: 0 auto;
-  padding: 10% 3% 0 3%;
+  padding: 6% 3% 0 3%;
 }
 .service-box figure {
   width: calc(100% / 3);
@@ -412,7 +412,7 @@ nav {
 }
 .sb-img-title1, .sb-img-title2{
   font-family: "KBO-Dia-Gothic_medium";
-  font-size: 24px;
+  font-size: 28px;
   color: #fff;
   position: absolute;
   bottom: 0;
@@ -454,7 +454,7 @@ figcaption p {
 .service h3 {
   /* color: #134AA9; */
   font-weight: 300;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.4em;
   font-family: "KBO-Dia-Gothic_medium";
   text-align: center;
@@ -506,7 +506,7 @@ figcaption p {
   padding: 0 10% 0 10% ;
 }
 .service3-text span{
-  font-size: 24px;
+  font-size: 28px;
   line-height: 3em;
   font-family: "KBO-Dia-Gothic_medium";
 }
@@ -515,7 +515,6 @@ figcaption p {
 }
 
 /* ========================================================================== */
-
 @media screen and (max-width: 1000px) {
   header img {
     width: 150px;
@@ -559,6 +558,21 @@ figcaption p {
     gap: 4%;
     padding: 4% 0 0 0;
   }
+  .sb-img-title1, .sb-img-title2{
+    font-size: 22px;
+  }
+  .service h3 {
+    font-size: 22px;
+  }
+  .service p {
+    font-size: 16px;
+  }
+  .service3-text span{
+    font-size: 22px;
+  }
+  .service3-text p{
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 900px) {
   .top-menu {
@@ -579,12 +593,6 @@ figcaption p {
   }
   .log li a {
     font-size: 14px;
-  }
-  .service h3 {
-    font-size: 22px;
-  }
-  .service p {
-    font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -654,10 +662,19 @@ figcaption p {
     gap: 2%;
     padding: 2% 0 0 0;
   }
+  .sb-img-title1, .sb-img-title2{
+    font-size: 18px;
+  }
   .service h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .service p {
+    font-size: 14px;
+  }
+  .service3-text span{
+    font-size: 18px;
+  }
+  .service3-text p{
     font-size: 14px;
   }
 }
@@ -676,7 +693,6 @@ figcaption p {
   }
   .counter-wrapper {
     gap: 10%;
-
   }
   .count-title {
     font-size: 22px;
@@ -701,13 +717,55 @@ figcaption p {
     gap: 1%;
     padding: 1% 0 0 0;
   }
-
+  .sb-img-title1, .sb-img-title2{
+  padding: 10px;
+  }
   .service h3 {
     font-size: 18px;
   }
   .service p {
     font-size: 12px;
   }
+  .service3-text{
+    /* position: absolute;
+    top: 5%;
+    left: 0;
+    padding: 0 5% 0 5% ; */
+  }
+}
+@media screen and (max-width: 420px) {
+  .section1 {
+    padding: 16% 0 8% 0;
+  }
+  .service:hover figcaption {
+    top: 0
+  }
+  .service h3 {
+   display: none;
+  }
+  .service p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 20px;
+  }
+  .service figcaption {
+    padding: 15px 6px 45px 6px;
+  }
+  .service3-text{
+    padding: 4px;
+    text-align: center;
+    top: 2%;
+  }
+  .service3-text span{
+font-size: 16px;
+     }
+  .service3-text p{
+ display: none;
+  }
+  .service3-text p{
+    font-size: 14px;
+  }
+
 }
 @media screen and (max-width: 390px) {
   .count-title {
