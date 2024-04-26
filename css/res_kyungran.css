@@ -46,6 +46,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: 30px;
   }
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
@@ -60,23 +61,19 @@
     color: #fff;
     transition: all 0.3s;
   }
-  .FAQ-box .FAQ .FAQ-small-box {
-    bottom: auto;
-  }
-  .section3 .FAQ-box {
-    height: 238px;
-  }
+  .FAQ-box .FAQ a li {
+    line-height: 28px;
 }
-@media all and (max-width: 768px) {
-  .section-tite {
-    font-size: 32px;
-  }
-  .CM-box .CM span {
-    font-size: 32px;
-  }
-  .FAQ-box .FAQ span {
-    font-size: 32px;
-  }
+.CM-box .CM a li {
+    line-height: 23px;
+}
+.section3 .CM-box , .section3 .FAQ-box {
+    padding: 35px;
+}
+.CM-box .CM .plus-icon , .FAQ-box .FAQ .plus-icon {
+    top: 32px;
+    right: 32px;
+}
 }
 @media all and (max-width: 710px) {
   .section2 .list-wrap .img-box:nth-child(3) {
@@ -104,12 +101,6 @@
   }
   .CM-box .CM span {
     font-size: 28px;
-  }
-  .CM-box .CM a li {
-    font-size: 19px;
-  }
-  .FAQ-box .FAQ .FAQ-small-box {
-    font-size: 19px;
   }
 .FAQ-box .FAQ span {
   font-size: 28px;
@@ -141,6 +132,10 @@
   .tab-nav-wrapper {
     width: 279px !important;
   }
+  .img-box a::after {
+    width:80%;
+    background-size:contain;
+    }
 }
 @media all and (max-width: 340px) {
   /* 탭메뉴 가로설정 */
