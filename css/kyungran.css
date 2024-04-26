@@ -264,24 +264,24 @@
   transform: translateX(-50%);
   transition: all 0.1s;
 }
-.img-box a:hover::after {
-  content: "";
-  display: block;
-  position: absolute;
-  background: url("../images/kyungran/잔여\ 10명\ 모집\ 15명.png") no-repeat;
-  bottom: 0;
-  /* top: 55px; */
-  top: 0px;
-  left: 50%;
-  width: 198px;
-  transform: translateX(-50%);
-  transition: all 0.1s;
+
+.img-box > a > .img1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
 }
+
+
+.img-box > a:hover .img1  {
+
+  filter: brightness(0.4);
+}
+
 .img-box > a:hover::after {
   display: block;
 }
 .img-box > a:hover .img1 {
-  content: "";
   filter: brightness(0.4);
 }
 .img-box > a > .img1 {
@@ -297,20 +297,8 @@
   height: 100%;
   padding-bottom: 7px;
 }
-/* .img-box > a:hover img{
-    filter: brightness(60%);
-    transition:  all 0.2s ; 
-} */
-/* .img-box > a:hover .hart-icon {
-  transform: translate(0, -10px) !important;
-  transition: all 0.2s ease-out;
-} */
-/* .img-box > a:hover span {
-  /* color:rgb(19, 74, 169) !important; */
-/* color: rgb(156, 156, 156) !important; */
-/* color:#0042b5 !important; */
-/* 내용 */
 
+/* 내용 */
 .list-wrap > .img-box > a > span {
   position: relative;
   display: block;
@@ -346,12 +334,11 @@
   z-index: 9;
 }
 .img-box .hart-icon:hover {
-  bottom: 0; /* 호버 시 아이콘이 살짝 위로 이동 */ 
-  transition: all 0.08s;
+  bottom: 0; /* 호버 시 아이콘이 살짝 위로 이동 */
+  transition: all 0.09s;
 }
 .img-box .hart-icon.act {
   background: url("../images/kyungran/full-hart-icon.svg") no-repeat center;
- 
 }
 .pgn {
   position: relative;
@@ -383,7 +370,8 @@
   padding: 51px 0;
 }
 /* 커뮤니티 */
-.section3 .CM-box , .section3 .FAQ-box {
+.section3 .CM-box,
+.section3 .FAQ-box {
   position: relative;
   text-align: left;
   width: 100%;
@@ -393,14 +381,16 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
   border-radius: 30px;
 }
-.CM-box .CM span , .FAQ-box .FAQ span {
+.CM-box .CM span,
+.FAQ-box .FAQ span {
   font-size: 32px;
   font-weight: bold;
   display: block;
   border-bottom: 1px solid #dddddd;
   padding-bottom: 7px;
 }
-.CM-box .CM .plus-icon , .FAQ-box .FAQ .plus-icon {
+.CM-box .CM .plus-icon,
+.FAQ-box .FAQ .plus-icon {
   position: absolute;
   top: 36px;
   right: 36px;
@@ -410,7 +400,8 @@
   outline: none;
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat 0px 0px;
 }
-.CM-box .CM .plus-icon:hover , .FAQ-box .FAQ .plus-icon:hover {
+.CM-box .CM .plus-icon:hover,
+.FAQ-box .FAQ .plus-icon:hover {
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat bottom;
 }
 .CM-box .CM a li,
