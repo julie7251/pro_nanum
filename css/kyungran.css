@@ -37,7 +37,7 @@
   border-radius: 50px;
   /* border: 1.9px solid #134aa9; */
   color: #333333;
-  background: #ededed;
+  background: rgb(241 241 241);
   text-decoration: none;
 }
 .tab-nav a:hover,
@@ -253,7 +253,16 @@
   position: relative;
 }
 .img-box a::after {
-  opacity: 1;
+  content: "";
+  display: none;
+  position: absolute;
+  background: url("../images/kyungran/잔여\ 10명\ 모집\ 15명.png") no-repeat;
+  bottom: 0;
+  top: 0px;
+  left: 50%;
+  width: 198px;
+  transform: translateX(-50%);
+  transition: all 0.1s;
 }
 .img-box a:hover::after {
   content: "";
@@ -268,20 +277,20 @@
   transform: translateX(-50%);
   transition: all 0.1s;
 }
+.img-box > a:hover::after {
+  display: block;
+}
+.img-box > a:hover .img1 {
+  content: "";
+  filter: brightness(0.4);
+}
 .img-box > a > .img1 {
   position: relative;
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
 }
-.img-box > a:hover .img1 {
-  content: "";
-  filter: brightness(0.4);
-}
 
-.img-box > a:hover span:nth-child(n+2){
-  color: #134aa9;
-}
 .img-box > a > img {
   position: relative;
   width: 100%;
@@ -336,9 +345,13 @@
   background: url("../images/kyungran/hart-icon_gray.svg") no-repeat center;
   z-index: 9;
 }
-
+.img-box .hart-icon:hover {
+  bottom: 0; /* 호버 시 아이콘이 살짝 위로 이동 */ 
+  transition: all 0.08s;
+}
 .img-box .hart-icon.act {
   background: url("../images/kyungran/full-hart-icon.svg") no-repeat center;
+ 
 }
 .pgn {
   position: relative;
@@ -370,23 +383,24 @@
   padding: 51px 0;
 }
 /* 커뮤니티 */
-.section3 .CM-box {
+.section3 .CM-box , .section3 .FAQ-box {
   position: relative;
   text-align: left;
-  padding: 15px 20px;
   width: 100%;
   min-width: 276px;
   background-color: #fff;
-  /* border: 1px solid #ddd; */
-  padding: 40px;
+  padding: 37px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
   border-radius: 30px;
 }
-.CM-box .CM span {
+.CM-box .CM span , .FAQ-box .FAQ span {
   font-size: 32px;
   font-weight: bold;
+  display: block;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 7px;
 }
-.CM-box .CM .plus-icon {
+.CM-box .CM .plus-icon , .FAQ-box .FAQ .plus-icon {
   position: absolute;
   top: 36px;
   right: 36px;
@@ -396,12 +410,12 @@
   outline: none;
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat 0px 0px;
 }
-.CM-box .CM .plus-icon:hover {
+.CM-box .CM .plus-icon:hover , .FAQ-box .FAQ .plus-icon:hover {
   background: url("../images/kyungran/pluse-icon-set.png") no-repeat bottom;
 }
-.CM-box .CM a li {
+.CM-box .CM a li,
+.FAQ-box .FAQ a li {
   font-size: 19px;
-  line-height: 31px;
   padding-top: 21px;
   padding-left: 17px;
   color: #1a1a1aa3;
@@ -411,71 +425,17 @@
   text-overflow: ellipsis;
   word-break: break-all;
 }
-.CM-box .CM li:nth-child(2) {
+.CM-box .CM li:nth-child(2),
+.FAQ-box .FAQ li:nth-child(2) {
   padding-top: 19px;
 }
-.CM-box .CM a:hover li {
+.CM-box .CM a:hover li,
+.FAQ-box .FAQ a:hover li {
   color: #134aa9;
 }
-
-/* 자주 묻는 질문 */
-.section3 .FAQ-box {
-  position: relative;
-  text-align: left;
-  padding: 20px;
-  width: 100%;
-  min-width: 276px;
-  background-color: #fff;
-  padding: 40px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
-  border-radius: 30px;
-  font-size: 22px;
+.CM-box .CM a li {
+  line-height: 31px;
 }
-.FAQ-box .FAQ span {
-  font-size: 32px;
-  font-weight: bold;
-}
-.FAQ-box .FAQ .plus-icon {
-  position: absolute;
-  top: 36px;
-  right: 36px;
-  width: 54px;
-  height: 54px;
-  border: none;
-  outline: none;
-  background: url("../images/kyungran/pluse-icon-set.png") no-repeat 0px 0px;
-}
-.FAQ-box .FAQ .plus-icon:hover {
-  background: url("../images/kyungran/pluse-icon-set.png") no-repeat bottom;
-}
-.FAQ-box .FAQ .FAQ-small-box {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  padding: 0px 45px 20px 46px;
-  font-size: 19px;
-  border-radius: 0px 0px 30px 30px;
-  background-color: #fafafa;
-  line-height: 51px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-}
-.FAQ-small-box > a > li:nth-last-child(1) {
-  border-bottom: none;
-}
-.FAQ-small-box > a > li {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  border-bottom: 1px solid #ddd;
-  padding: 9px;
-  color: rgba(26, 26, 26, 0.64);
-}
-.FAQ-small-box > a:hover li {
-  color: #134aa9;
+.FAQ-box .FAQ a li {
+  line-height: 49px;
 }
