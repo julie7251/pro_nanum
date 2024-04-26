@@ -1,5 +1,14 @@
 @charset "utf-8";
 /* 반응형 */
+@media all and (min-width: 1200px) {
+  .tab-nav a {
+    font-size: 17px;
+  }
+  .tab-nav-wrapper {
+    overflow: hidden;
+    width: 692px;
+  }
+}
 @media all and (max-width: 1800px) {
   .section2 {
     padding: 0px 25px;
@@ -11,8 +20,8 @@
     gap: 25px;
   }
 }
-@media all and (max-width: 1170px) { 
-   .section2 {
+@media all and (max-width: 1170px) {
+  .section2 {
     margin-top: 100px;
     margin-bottom: 100px;
   }
@@ -20,21 +29,20 @@
     padding: 18px 0 11px;
   }
   .area-list {
-  top: 44px;
+    top: 44px;
   }
   .monthly-list {
-  top: 44px;
+    top: 44px;
   }
   .order-list {
-  top: 44px;
+    top: 44px;
   }
-
 }
 @media all and (max-width: 900px) {
   .section2 .list-wrap .img-box:nth-child(4) {
     display: none;
   }
-  .section3-inner{
+  .section3-inner {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -48,7 +56,7 @@
     color: #292929;
   }
   .tab-nav a.active {
-    background-color: #1e6bf1;
+    background-color: #134aa9;
     color: #fff;
     transition: all 0.3s;
   }
@@ -76,7 +84,7 @@
   }
   .img-box .hart-icon {
     bottom: -7px;
-}
+  }
 }
 @media all and (max-width: 660px) {
   /* 탭메뉴 가로설정 */
@@ -97,15 +105,15 @@
   .CM-box .CM span {
     font-size: 28px;
   }
-  .FAQ-box .FAQ span {
-    font-size: 28px;
-  }
-  .CM-box .CM li {
+  .CM-box .CM a li {
     font-size: 19px;
   }
   .FAQ-box .FAQ .FAQ-small-box {
     font-size: 19px;
   }
+.FAQ-box .FAQ span {
+  font-size: 28px;
+}
 }
 @media all and (max-width: 450px) {
   /* 탭메뉴 가로설정 */
@@ -118,7 +126,7 @@
   .tab-nav-wrapper {
     width: 290px !important;
   }
-  .section-tite{
+  .section-tite {
     font-size: 24px;
   }
   .CM-box .CM span {
