@@ -88,13 +88,13 @@
 @media all and (max-width: 660px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 521px !important;
+    width: 525px !important;
   }
 }
 @media all and (max-width: 600px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 400px !important;
+    width: 339px !important;
   }
 }
 @media screen and (max-width: 560px) {
@@ -125,25 +125,28 @@
 }
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 310px !important;
+    width: 320px !important;
   }
   .tab-nav a {
-    font-size: 14px;
+    font-size: 15px;
   }
   .section-tite {
-    font-size: 24px;
+    font-size: 25px;
   }
   .right-toggle {
     padding: 20px 0 11px;
+  }
+  .area-list > li , .monthly-list > li ,  .order-list > li { 
+    font-size: 14px;
   }
   .list-wrap {
   padding-bottom: 34px;
   }
   .list-wrap > .img-box > a > .span1 {
-    font-size: 15px;
+    font-size: 16px;
   }
   .list-wrap > .img-box > a > span {
-    font-size: 13px;
+    font-size: 14px;
   }
   .pgn > button {
     font-size: 14px;
@@ -163,11 +166,11 @@ padding: 26px 0;
   }
   .CM-box .CM span ,
   .FAQ-box .FAQ span {
-    font-size: 24px;
+    font-size: 25px;
   }
   .CM-box .CM a li,
   .FAQ-box .FAQ a li {
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 12px;
   }
   .CM-box .CM .plus-icon,
@@ -185,7 +188,7 @@ padding: 26px 0;
 @media all and (max-width: 390px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 290px !important;
+    width: 295px !important;
   }
   .section-tite {
     font-size: 24px;
@@ -200,7 +203,7 @@ padding: 26px 0;
 @media all and (max-width: 360px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 279px !important;
+    width: 292px !important;
   }
 
   .img-box a::after {
@@ -211,12 +214,12 @@ padding: 26px 0;
 @media all and (max-width: 340px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 220px !important;
+    width: 226px !important;
   }
 }
 @media all and (max-width: 280px) {
   /* 탭메뉴 가로설정 */
   .tab-nav-wrapper {
-    width: 180px !important;
+    width: 195px !important;
   }
 }
