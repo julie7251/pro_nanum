@@ -1,38 +1,44 @@
 // 경란
 // ============================================ tab-nav 슬라이드 기능
-window.addEventListener("load", function () {
-  var on = $('.tab-nav').find('.activetop').index();
-  console.log(on);
+$(document).ready(function() {
+  // Initialize Sly on the tab navigation wrapper
   var options = {
-  horizontal: 1,
-  itemNav: 'centered', //basic , centered,
-  speed: 600,
-  smart: 1,
-     activateOn: 'click',
-  mouseDragging: 1,
-  touchDragging: 1,
-  activateMiddle: 1,
-  releaseSwing: 1,
-  activeClass:'activetop',
-  startAt: on,
-  easing: 'easeInOutQuart',
-  // itemSelector:1
+      horizontal: 1,
+      itemNav: "centered",
+      speed: 600,
+      smart: 1,
+      activateOn: "click",
+      mouseDragging: 1,
+      touchDragging: 1,
+      activateMiddle: 1,
+      releaseSwing: 1,
+      activeClass: "activetop",
+      startAt: $(".tab-nav").find(".activetop").index(), // Use the index of the active tab on load
+      easing: "easeInOutQuart"
   };
 
-  var frame = new Sly('.tab-nav-wrapper', options).init();
+  var frame = new Sly(".tab-nav-wrapper", options).init();
+
+  // Click event for tab titles
+  const tabtitel = $(".tab-nav li a");
+  tabtitel.click(function(e) {
+      e.preventDefault();
+
+      // Remove 'active' class from all tabs and then add it to the clicked tab
+      tabtitel.removeClass("active");
+      $(this).addClass("active");
+
+      // Hide all content and show the target content
+      $(".all-list").hide();
+      let target = $(this).attr("href");
+      $(target).show();
+
+      // After updating the tab, refresh the Sly instance to the index of the newly activated tab
+      var newIndex = $(this).parent().index(); // Assuming <a> is a direct child of <li>
+      frame.toCenter(newIndex); // Move the slider to the center based on the new index
   });
 
-// ======================================== tab-nav 클릭시 해당 메뉴로
-window.addEventListener("load", function () {
-  const tabtitel = $(".tab-nav li a");
-  tabtitel.click(function (e) {
-    e.preventDefault();
-    tabtitel.removeClass("active");
-    $(this).addClass("active");
-    $(".all-list").hide();
-    let target = $(this).attr("href");
-    $(target).show();
-  });
+  // Trigger a click on the first tab to initialize the state
   tabtitel.eq(0).trigger("click");
 });
 
