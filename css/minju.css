@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* flying baneer */
 /* 신청하기 버튼 */
-.pop-button {
+/* .pop-button {
   position: relative;
   position: fixed;
   right: 0%;
@@ -23,10 +23,10 @@
   z-index: 9999999;
 }
 .pop-button .chat-btn {
-  animation: updown 1.5s infinite;
-  /* -webkit-animation:updown 1.5s infinite; */
-  /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
-}
+  animation: updown 1.5s infinite; */
+/* -webkit-animation:updown 1.5s infinite; */
+/* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
+/* }
 .top-button {
   position: relative;
   z-index: 999999;
@@ -38,7 +38,6 @@
   bottom: 68%;
   right: 2.5%;
   background: #fff;
-  /* background-color: #134aa9; */
   box-shadow: none;
   border-radius: 50%;
   width: 60px;
@@ -56,7 +55,7 @@
   transform: rotate(0deg);
 }
 /* 애내메이션 효과 */
-@keyframes updown {
+/* @keyframes updown {
   0% {
     transform: translatey(0);
   }
@@ -66,7 +65,7 @@
   100% {
     transform: translatey(0);
   }
-}
+}  */
 /* =============================================== */
 /* 민주 */
 .inner {
@@ -115,13 +114,13 @@ hr {
 }
 /* ===================================================== */
 /* 움직이는 텍스트 */
-.section5 .content img {
+.section5 {
   width: 100%;
 }
 .animated-title {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
   padding: 8%;
   margin-top: -4%;
@@ -130,10 +129,17 @@ hr {
   overflow-y: hidden;
 }
 .animated-title .track {
+  width: 100%;
   position: absolute;
   white-space: nowrap;
   will-change: transform;
   animation: marquee 60s linear infinite;
+}
+.track .content {
+  width: 100%;
+}
+.track .content img {
+  width: 100%;
 }
 @keyframes marquee {
   from {
@@ -215,14 +221,6 @@ footer .left button {
 }
 /* ================================================ */
 /* 참여하기 */
-.takejoin {
-  width: 100%;
-  position: fixed;
-  background-color: #fff;
-  bottom: 0px;
-  transition: top 0.3s ease-in-out;
-  display: none;
-}
 .takejoin .heart {
   width: 100%;
   background-color: #134aa9;
@@ -239,16 +237,8 @@ footer .left button {
   }
 }
 /* =================================================== */
-
-@media screen and (max-width: 1500px) {
-  .snsImage-btn1 {
-    top: 15px;
-    right: 2800%;
-  }
-}
-/* 반응형 */
 @media screen and (max-width: 1300px) {
-  .section4 .nanumsns-swiper .swiper-button-next img {
+  .snsImage-btn1 {
     right: 650px;
   }
   .section4 .snstext {
@@ -262,9 +252,6 @@ footer .left button {
     margin-top: -4%;
     margin-bottom: 0%;
   }
-  footer .line {
-    display: none;
-  }
   footer .left img {
     width: 15%;
   }
@@ -277,7 +264,7 @@ footer .left button {
   .pop-button {
     right: -3%;
   }
-  .section4 .nanumsns-swiper .swiper-button-next img {
+  .snsImage-btn1 {
     display: none;
   }
   .section4 .snstext {
@@ -314,7 +301,6 @@ footer .left button {
     float: left;
     margin: 8%;
   }
-
   footer .left .tell {
     margin-top: -20%;
     display: block;
@@ -337,12 +323,12 @@ footer .left button {
     text-align: left;
     font-family: "KBO-Dia-Gothic_light";
     letter-spacing: 1px;
-}
+  }
 }
 /* ===================================================== */
 @media screen and (max-width: 768px) {
   .section5 .content img {
-    width: 300%;
+    width: 100%;
   }
   .section4 {
     margin-top: -10%;
@@ -411,17 +397,19 @@ footer .left button {
     background-color: #333;
     border: 1px solid #fff;
     color: #fff;
+    font-family: "KBO-Dia-Gothic_light";
   }
-   footer .right p {
+  footer .right p {
     line-height: 1.5;
     text-align: left;
     font-family: "KBO-Dia-Gothic_light";
     letter-spacing: 1px;
-   }
+  }
 }
 /* ==================================================== */
 @media screen and (max-width: 480px) {
-  .pop-button, .top-button {
+  .pop-button,
+  .top-button {
     display: none;
   }
   .section4 .snstext h1 {
@@ -433,20 +421,11 @@ footer .left button {
     border-radius: 10%;
   }
   .section5 .content img {
-    width: 350%;
+    width: 100%;
   }
   .section5 .animated-title {
     padding: 12%;
     margin-top: -12%;
-  }
-  .takejoin {
-    display: block;
-    z-index: 99999;
-    width: 100%;
-    position: fixed;
-    background-color: #fff;
-    bottom: 0px;
-    transition: top 0.3s ease-in-out;
   }
   .takejoin .heart {
     display: block;
@@ -532,7 +511,7 @@ footer .left button {
     border-radius: 10%;
   }
   .section5 .content img {
-    width: 350%;
+    width: 100%;
   }
   .section5 .animated-title {
     padding: 14%;
@@ -585,5 +564,4 @@ footer .left button {
     color: #fff;
     font-family: "KBO-Dia-Gothic_light";
   }
- 
 }
