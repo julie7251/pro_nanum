@@ -37,7 +37,7 @@
   border-radius: 50px;
   /* border: 1.9px solid #134aa9; */
   color: #333333;
-  background: rgb(241 241 241);
+  background: rgb(249 249 249);
   text-decoration: none;
 }
 .tab-nav a:hover,
@@ -271,18 +271,11 @@
   height: 100%;
   padding-bottom: 10px;
 }
-
-
 .img-box > a:hover .img1  {
-
   filter: brightness(0.4);
 }
-
 .img-box > a:hover::after {
   display: block;
-}
-.img-box > a:hover .img1 {
-  filter: brightness(0.4);
 }
 .img-box > a > .img1 {
   position: relative;
@@ -290,7 +283,6 @@
   height: 100%;
   padding-bottom: 10px;
 }
-
 .img-box > a > img {
   position: relative;
   width: 100%;
