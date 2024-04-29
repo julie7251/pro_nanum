@@ -3,8 +3,20 @@ window.addEventListener("load", function () {
   //스와이퍼
   var swiper = new Swiper(".nanumsns", {
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 300,
+    breakpoints: {
+      1500: {
+        slidesPerView: 3,
+        spaceBetween: 300,
+      },
+      1000: {
+        slidesPerView: 2.5,
+        spaceBetween: 50,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 100,
+      },
+    },
     centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",

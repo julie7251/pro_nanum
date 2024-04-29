@@ -1,34 +1,74 @@
 @charset "utf-8";
-/* <!-- 탑버튼 --> */
+/* 민주 */
+/* flying baneer */
+/* 신청하기 버튼 */
+.pop-button {
+  position: relative;
+  position: fixed;
+
+  right: 3%;
+  bottom: 15%;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop-button img {
+  width: 50%;
+}
+.pop-button span {
+  font-family: "KBO-Dia-Gothic_light";
+  position: absolute;
+  top: 38px;
+  left: 32%;
+  color: #fff;
+  z-index: 9999999;
+}
+.pop-button .chat-btn {
+  animation: updown 1.5s infinite;
+  /* -webkit-animation:updown 1.5s infinite; */
+  /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
+}
 .top-button {
   position: relative;
-    z-index: 999999;
-    display: block;
+  z-index: 999999;
+  display: block;
+}
+.top-button .top-btn {
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  right: 5.8%;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #134aa9;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+.top-btn img {
+  width: 50%;
+}
+.top-button .top-btn img {
+  transform: rotate(180deg);
+}
+.top-button .top-btn img.up {
+  transform: rotate(0deg);
+}
+/* 애내메이션 효과 */
+@keyframes updown {
+  0% {
+    transform: translatey(0);
   }
-  .top-button .top-btn {
-    display: block;
-      position: fixed;
-        bottom: 15%;
-    right: 3.2%;
-    background-color: rgba(255, 255, 255, 0.8);
-    background-color: #134aa9;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
+  50% {
+    transform: translatey(-10%);
   }
-  .top-btn img{
-    width: 50%;
+  100% {
+    transform: translatey(0);
   }
-  .top-button .top-btn img {
-    transform: rotate(180deg);
-  }
-  .top-button .top-btn img.up {
-    transform: rotate(0deg);
-  }
+}
 /* =============================================== */
-/* 민주 */
+
 .inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -36,10 +76,16 @@
 .section4 .nanumsns-swiper .swiper-button-next::after {
   display: none;
 }
+.section4 .nanumsns-swiper .swiper-button-prev::after {
+  display: none;
+}
+.snsImages-btn2{
+display: none;
+}
 .snsImage-btn1 {
   position: absolute;
   top: 15px;
-  right: 880px;
+  right:  3200%;
 }
 .section4 {
   display: flex;
@@ -144,6 +190,8 @@ footer .right h1 span {
 footer .right p {
   line-height: 1.5;
   text-align: left;
+  letter-spacing: 1px;
+  font-family: "KBO-Dia-Gothic_light";
 }
 footer .left {
   float: right;
@@ -168,50 +216,15 @@ footer .left button {
   border: 1px solid #fff;
   color: #fff;
   font-family: "KBO-Dia-Gothic_light";
-  letter-spacing: 2px;
-}
-footer p {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 footer .line {
   display: none;
 }
-/* ================================================ */
-/* flying baneer */
-/* 신청하기 버튼 */
-.pop-button {
-  position: fixed;
-  right: 30px;
-  bottom:  20%;
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.pop-button img{
-  width:80%;
-}
-.pop-button .chat-btn {
-  animation: updown 1.5s infinite;
-  /* -webkit-animation:updown 1.5s infinite; */
-  /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
-}
-/* 애내메이션 효과 */
-@keyframes updown {
-  0% {
-    transform: translatey(0);
-  }
-  50% {
-    transform: translatey(-10%);
-  }
-  100% {
-    transform: translatey(0);
-  }
-}
 /* =================================================== */
 /* 참여하기 */
 .takejoin {
+  font-family: "KBO-Dia-Gothic_light";
   width: 100%;
   position: fixed;
   background-color: #fff;
@@ -220,6 +233,7 @@ footer .line {
   display: none;
 }
 .takejoin .heart {
+  font-family: "KBO-Dia-Gothic_light";
   width: 100%;
   background-color: #134aa9;
   color: #fff;
@@ -227,11 +241,25 @@ footer .line {
   font-size: 2vw;
   display: none;
 }
-/* =================================================== */
 /* 반응형 */
-@media screen and (max-width: 1300px) {
-  .section4 .nanumsns-swiper .swiper-button-next img {
-    right: 650px;
+/* =================================================== */
+@media screen and (max-width: 1870px) {
+  .animated-title {
+    margin-bottom: 1%;
+    padding: 4%;
+  }
+}
+
+/* =================================================== */
+
+@media screen and (max-width: 1500px) {
+  .pop-button {
+    right: 2.2%;
+    bottom: 15%;
+  }
+  .snsImage-btn1 {
+    top: 15px;
+    right:  2800%;
   }
   .section4 .snstext {
     padding-top: 15%;
@@ -241,18 +269,27 @@ footer .line {
     margin-top: -4%;
     margin-bottom: 0%;
   }
-  .pop-button {
+
+}
+/* ===================================================== */
+@media screen and (max-width: 1300px) {
+  .snstext {
     display: none;
   }
-  footer .line {
+  .snsImage-btn1 {
     display: none;
   }
-  footer .left img {
-    width: 15%;
+  .section4 .nanumsns-swiper {
+    width: 100%;
+    position: relative;
   }
 }
 /* ===================================================== */
 @media screen and (max-width: 859px) {
+  .pop-button {
+    right: 0%;
+    bottom: 15%;
+  }
   .section4 .nanumsns-swiper .swiper-button-next img {
     display: none;
   }
@@ -266,8 +303,19 @@ footer .line {
     font-size: 3vw;
     font-weight: 800;
   }
+  .section5 .content img {
+    width: 200%;
+  }
+  .section5 .animated-title {
+    padding: 8%;
+    padding-top: 4%;
+    padding-bottom: -2%;
+  }
+  footer .left img {
+    width: 15%;
+  }
   footer {
-    height: 500px;
+    height: 480px;
     width: 100%;
   }
   footer .right {
@@ -286,18 +334,25 @@ footer .line {
     text-align: left;
     color: #ffffff79;
   }
+  footer .right p {
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: "KBO-Dia-Gothic_light";
+  }
   footer .left {
     float: left;
     margin: 8%;
   }
 
   footer .left .tell {
-    margin-top: -20%;
+    margin-top: -15%;
     display: block;
     font-size: 5vw;
     text-align: left;
   }
   footer .left button {
+    border-radius: 7px;
     width: 130px;
     height: 50px;
     margin: 20px 5px;
@@ -305,23 +360,27 @@ footer .line {
     border: 1px solid #fff;
     color: #fff;
     font-family: "KBO-Dia-Gothic_light";
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
-  footer p {
-    letter-spacing: 2px;
-  }
-  footer p::after {
+
+  /* footer p::after {
     content: "";
     display: block;
     width: 145%;
     height: 1px;
     background-color: #fff;
     margin-top: 10%;
-  }
+  } */
 }
 
 /* ===================================================== */
 @media screen and (max-width: 768px) {
+  .pop-button {
+    position: relative;
+    position: fixed;
+    right: -0.5%;
+    bottom: 15%;
+  }
   .section5 .content img {
     width: 300%;
   }
@@ -344,6 +403,7 @@ footer .line {
     margin-bottom: 10%;
   }
   .snsnanum img {
+    border-radius: 10%;
     width: 40%;
     padding: 2%;
   }
@@ -353,7 +413,7 @@ footer .line {
     padding-bottom: -4%;
   }
   footer {
-    height: 450px;
+    height: 430px;
     width: 100%;
   }
   footer .right h1 {
@@ -367,6 +427,12 @@ footer .line {
     font-size: 5vw;
     text-align: left;
     color: #ffffff79;
+  }
+  footer .right p {
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: "KBO-Dia-Gothic_light";
   }
   footer .left {
     float: left;
@@ -386,28 +452,37 @@ footer .line {
     background-color: #333;
     border: 1px solid #fff;
     color: #fff;
+    letter-spacing: 1px;
   }
-  footer p {
-    letter-spacing: 2px;
-  }
-  footer p::after {
+  /* footer p::after {
     content: "";
     display: block;
     width: 130%;
     height: 1px;
     background-color: #fff;
     margin-top: 8%;
-  }
+  } */
 }
+
 /* ==================================================== */
 @media screen and (max-width: 480px) {
-  /* 참여하기 */
+  .flyingbanner {
+    display: none;
+  }
+  /* .section4{
+    margin-top: -10%;
+  } */
   .section4 .snstext h1 {
     font-size: 8vw;
     font-weight: 800;
   }
   .snsnanum {
     margin-top: -15%;
+  }
+  .snsnanum img {
+    border-radius: 10%;
+    width: 40%;
+    padding: 2%;
   }
   .section5 .content img {
     width: 350%;
@@ -455,9 +530,10 @@ footer .line {
     color: #fff;
   }
   footer .right p {
-    line-height: 1.3;
-    font-size: 16px;
-    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: "KBO-Dia-Gothic_light";
   }
   footer .left {
     margin: 0 auto;
@@ -480,8 +556,9 @@ footer .line {
     border: 1px solid #fff;
     color: #fff;
     font-family: "KBO-Dia-Gothic_light";
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
+
   footer p::after {
     content: "";
     display: block;
@@ -513,7 +590,8 @@ footer .line {
     margin-top: 10%;
   }
   .snsnanum img {
-    width: 50%;
+    border-radius: 10%;
+    width: 40%;
     padding: 2%;
   }
   .section5 .content img {
@@ -541,8 +619,10 @@ footer .line {
   }
 
   footer .right p {
-    line-height: 1.3;
-    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: "KBO-Dia-Gothic_light";
   }
   footer .left {
     margin: 0 auto;
@@ -564,7 +644,7 @@ footer .line {
     border: 1px solid #fff;
     color: #fff;
     font-family: "KBO-Dia-Gothic_light";
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
   footer p::after {
     content: "";
