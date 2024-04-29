@@ -128,22 +128,25 @@
     width: 310px !important;
   }
   .tab-nav a {
-    font-size: 14px;
+    font-size: 15px;
   }
   .section-tite {
-    font-size: 24px;
+    font-size: 25px;
   }
   .right-toggle {
     padding: 20px 0 11px;
+  }
+  .area-list > li , .monthly-list > li ,  .order-list > li { 
+    font-size: 14px;
   }
   .list-wrap {
   padding-bottom: 34px;
   }
   .list-wrap > .img-box > a > .span1 {
-    font-size: 15px;
+    font-size: 16px;
   }
   .list-wrap > .img-box > a > span {
-    font-size: 13px;
+    font-size: 14px;
   }
   .pgn > button {
     font-size: 14px;
@@ -163,11 +166,11 @@ padding: 26px 0;
   }
   .CM-box .CM span ,
   .FAQ-box .FAQ span {
-    font-size: 24px;
+    font-size: 25px;
   }
   .CM-box .CM a li,
   .FAQ-box .FAQ a li {
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 12px;
   }
   .CM-box .CM .plus-icon,
