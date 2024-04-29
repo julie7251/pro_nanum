@@ -9,6 +9,11 @@
     width: 692px;
   }
 }
+@media all and (min-width: 769px) {
+  .section-tite {
+    padding-top: 51px;
+   }
+  }   
 @media all and (max-width: 1800px) {
   .section2 {
     padding: 0px 25px;
@@ -152,7 +157,6 @@
     font-size: 14px;
     color: #292929;
   }
- 
   .section3 {
     padding: 0px 20px;
   }
@@ -179,11 +183,18 @@ padding: 26px 0;
     right: 23px;
   }
   .CM-box .CM a li {
-    line-height: 19px;
+    line-height: 18px;
   }
   .FAQ-box .FAQ a li {
-    line-height: 25px;
+    line-height: 23px;
   }
+  .list-wrap > .img-box > a > span {
+    padding: 6px 0 0px;
+    }
+    .section3 .CM-box, .section3 .FAQ-box {
+      padding: 23px 23px 34px 23px
+      }
+      
 }
 @media all and (max-width: 390px) {
   /* 탭메뉴 가로설정 */
