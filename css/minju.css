@@ -1,33 +1,63 @@
 @charset "utf-8";
-/* <!-- 탑버튼 --> */
+
+/* 민주 */
+/* flying baneer */
+/* 신청하기 버튼 */
+.pop-button {
+  position: relative;
+  position: fixed;
+  right: 0%;
+  bottom: 75%;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop-button img {
+  width: 50%;
+}
+.pop-button span {
+  font-family: "KBO-Dia-Gothic_light";
+  position: absolute;
+  top: 38px;
+  left: 32%;
+  color: #fff;
+  z-index: 9999999;
+}
+.pop-button .chat-btn {
+  animation: updown 1.5s infinite;
+  /* -webkit-animation:updown 1.5s infinite; */
+  /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
+}
 .top-button {
   position: relative;
-    z-index: 999999;
-    display: block;
-  }
-  .top-button .top-btn {
-    display: block;
-      position: fixed;
-        bottom: 15%;
-    right: 3.2%;
-    background-color: rgba(255, 255, 255, 0.8);
-    background-color: #134aa9;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-  }
-  .top-btn img{
-    width: 50%;
-  }
-  .top-button .top-btn img {
-    transform: rotate(180deg);
-  }
-  .top-button .top-btn img.up {
-    transform: rotate(0deg);
-  }
-/* =============================================== */
+  z-index: 999999;
+  display: block;
+}
+.top-button .top-btn {
+  display: block;
+  position: fixed;
+  bottom: 68%;
+  right: 2.5%;
+  background: #fff;
+  /* background-color: #134aa9; */
+  box-shadow: none;
+  border-radius: 50%;
+  width: 60px;
+  line-height: 55px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+.top-btn img {
+  width: 100%;
+}
+.top-button .top-btn img {
+  transform: rotate(180deg);
+}
+.top-button .top-btn img.up {
+  transform: rotate(0deg);
+}
+
 /* 민주 */
 .inner {
   max-width: 1400px;
@@ -39,8 +69,9 @@
 .snsImage-btn1 {
   position: absolute;
   top: 15px;
-  right: 880px;
-}
+  right: 3200%;
+    }
+
 .section4 {
   display: flex;
   margin-top: 100px;
@@ -82,7 +113,7 @@ hr {
   width: 100%;
   max-width: 100%;
   height: auto;
-  padding: 7%;
+  padding: 8%;
   margin-top: -4%;
   margin-bottom: -5%;
   overflow-x: hidden;
@@ -128,7 +159,6 @@ footer .right {
 }
 footer .right h1 {
   padding: 20px;
-
   font-family: "UhBeeSe_hyun";
   font-size: 3vw;
   text-align: left;
@@ -168,48 +198,14 @@ footer .left button {
   border: 1px solid #fff;
   color: #fff;
   font-family: "KBO-Dia-Gothic_light";
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  border-radius: 7px;
 }
-footer p {
-  letter-spacing: 2px;
-}
+
 footer .line {
   display: none;
 }
 /* ================================================ */
-/* flying baneer */
-/* 신청하기 버튼 */
-.pop-button {
-  position: fixed;
-  right: 30px;
-  bottom:  20%;
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.pop-button img{
-  width:80%;
-}
-.pop-button .chat-btn {
-  animation: updown 1.5s infinite;
-  /* -webkit-animation:updown 1.5s infinite; */
-  /* 다른 브라우저에서도 작동 될 수 있게 하기 위해 -webkit을 사용. */
-}
-/* 애내메이션 효과 */
-@keyframes updown {
-  0% {
-    transform: translatey(0);
-  }
-  50% {
-    transform: translatey(-10%);
-  }
-  100% {
-    transform: translatey(0);
-  }
-}
-/* =================================================== */
 /* 참여하기 */
 .takejoin {
   width: 100%;
@@ -228,21 +224,35 @@ footer .line {
   display: none;
 }
 /* =================================================== */
+@media screen and (max-width: 1870px) {
+  .animated-title {
+    margin-bottom: 1%;
+    padding: 4%;
+  }
+}
+/* =================================================== */
+
+@media screen and (max-width: 1500px) {
+  .snsImage-btn1 {
+    top: 15px;
+    right: 2800%;
+  }
+}
 /* 반응형 */
 @media screen and (max-width: 1300px) {
   .section4 .nanumsns-swiper .swiper-button-next img {
     right: 650px;
-  }
+   }
   .section4 .snstext {
     padding-top: 15%;
   }
+}
+/* ===================================================== */
+@media screen and (max-width: 1300px) {
   .animated-title {
     padding: 4%;
     margin-top: -4%;
     margin-bottom: 0%;
-  }
-  .pop-button {
-    display: none;
   }
   footer .line {
     display: none;
@@ -250,9 +260,15 @@ footer .line {
   footer .left img {
     width: 15%;
   }
+  .pop-button {
+    right: -1%;
+  }
 }
 /* ===================================================== */
 @media screen and (max-width: 859px) {
+  .pop-button {
+    right: -3%
+  }
   .section4 .nanumsns-swiper .swiper-button-next img {
     display: none;
   }
@@ -325,6 +341,9 @@ footer .line {
   .section5 .content img {
     width: 300%;
   }
+  .section4 {
+    margin-top: -10%;
+  }
   .section4 .snstext {
     display: block;
     width: 100%;
@@ -380,6 +399,7 @@ footer .line {
   }
 
   footer .left button {
+    border-radius: 7px;
     width: 130px;
     height: 50px;
     margin: 20px 5px;
@@ -401,7 +421,8 @@ footer .line {
 }
 /* ==================================================== */
 @media screen and (max-width: 480px) {
-  /* 참여하기 */
+  .flyingbanner {
+    display: none;
   .section4 .snstext h1 {
     font-size: 8vw;
     font-weight: 800;
@@ -425,7 +446,6 @@ footer .line {
     bottom: 0px;
     transition: top 0.3s ease-in-out;
   }
-
   .takejoin .heart {
     display: block;
     width: 100%;
@@ -434,6 +454,10 @@ footer .line {
     color: #fff;
     border: none;
     font-size: 5vw;
+  }
+  footer {
+    height: 480px;
+    width: 100%;
   }
   footer .right h1 {
     font-family: "UhBeeSe_hyun";
@@ -446,18 +470,14 @@ footer .line {
     text-align: left;
     color: #ffffff79;
   }
-  footer .left button {
-    width: 130px;
-    height: 50px;
-    margin-top: 20px;
-    background-color: #333;
-    border: 1px solid #fff;
-    color: #fff;
-  }
   footer .right p {
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: "KBO-Dia-Gothic_light";
     line-height: 1.3;
     font-size: 16px;
-    letter-spacing: 2px;
   }
   footer .left {
     margin: 0 auto;
@@ -473,6 +493,7 @@ footer .line {
     width: 8%;
   }
   footer .left button {
+    border-radius: 7px;
     width: 130px;
     height: 50px;
     margin: 20px 5px;
@@ -526,7 +547,7 @@ footer .line {
 
   footer {
     width: 100%;
-    height: 410px;
+    height: 460px;
   }
   footer .right h1 {
     font-family: "UhBeeSe_hyun";
@@ -541,8 +562,12 @@ footer .line {
   }
 
   footer .right p {
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: "KBO-Dia-Gothic_light";
+    font-size: 13px;
     line-height: 1.3;
-    font-size: 15px;
   }
   footer .left {
     margin: 0 auto;
@@ -557,6 +582,7 @@ footer .line {
     width: 10%;
   }
   footer .left button {
+    border-radius: 7px;
     width: 130px;
     height: 50px;
     margin: 20px 5px;
@@ -564,7 +590,6 @@ footer .line {
     border: 1px solid #fff;
     color: #fff;
     font-family: "KBO-Dia-Gothic_light";
-    letter-spacing: 2px;
   }
   footer p::after {
     content: "";
