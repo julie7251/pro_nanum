@@ -292,7 +292,8 @@ nav {
   color: #333;
   font-family: "KBO-Dia-Gothic_light", sans-serif;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+  /* color: red; */
 }
 
 .m-log > li:hover a {
@@ -507,7 +508,7 @@ figcaption p {
 }
 .service3-text span{
   font-size: 28px;
-  line-height: 3em;
+  line-height: 2em;
   font-family: "KBO-Dia-Gothic_medium";
 }
 .service3-text p{
@@ -555,8 +556,9 @@ figcaption p {
     top: -40px;
   }
   .service-box {
-    gap: 4%;
+    gap: 2%;
     padding: 4% 0 0 0;
+    /* background-color: red; */
   }
   .sb-img-title1, .sb-img-title2{
     font-size: 22px;
@@ -567,6 +569,10 @@ figcaption p {
   .service p {
     font-size: 16px;
   }
+  .service3-text{
+    padding: 0;
+text-align: center;
+}
   .service3-text span{
     font-size: 22px;
   }
@@ -596,11 +602,6 @@ figcaption p {
   }
 }
 @media screen and (max-width: 768px) {
-/* <!-- 탑버튼 --> */
-.top-button {
-  bottom: 100px;
-  right: 22px;
-}
   header {
     top: 0; /* 화면의 맨 위에 위치 */
     height: 65px;
@@ -757,31 +758,7 @@ figcaption p {
   .service:hover figcaption {
     top: 0
   }
-  .service h3 {
-   display: none;
-  }
-  .service p {
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 20px;
-  }
-  .service figcaption {
-    padding: 15px 6px 45px 6px;
-  }
-  .service3-text{
-    padding: 4px;
-    text-align: center;
-    top: 2%;
-  }
-  .service3-text span{
-font-size: 16px;
-     }
-  .service3-text p{
- display: none;
-  }
-  .service3-text p{
-    font-size: 14px;
-  }
+ 
 
 }
 @media screen and (max-width: 390px) {
@@ -794,26 +771,38 @@ font-size: 16px;
   .count-text {
     font-size: 12px;
   }
-  .sec1-main-text h4 {
-    font-size: 14px;
-    top: -40px;
-  }
-  .service-box {
-    gap: 1%;
-    padding: 1% 0 0 0;
-  }
   .service h3 {
+    display: none;
+   }
+   .service figcaption {
+display: none;
+   }
+  
+   .service3-text span{
+ font-size: 16px;
+      }
+   .service3-text p{
+  display: none;
+   }
+   .sb-img-title1, .sb-img-title2{
     font-size: 16px;
-  }
-  .service p {
-    font-size: 10px;
-  }
-  .service figcaption {
-    padding: 0 6% 0 6%;
+  padding: 5px;
+  height: 55px;
   }
 }
 @media screen and (max-width: 320px) {
   .sec1-title p {
-    font-size: 14px;
+    font-size: 12px;
   }
+  .sb-img-title1, .sb-img-title2{
+    font-size: 12px;
+  padding: 4px;
+  height: 40px;
+  }
+   .service3-text span{
+ font-size: 12px;
+ /* padding:0.2px */
+      }
+
+
 }
