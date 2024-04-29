@@ -1,96 +1,41 @@
 // 경란
 // ============================================ tab-nav 슬라이드 기능
-$(document).ready(function() {
-  // Initialize Sly on the tab navigation wrapper
+$(document).ready(function () {
+  var on = $('.tab-nav').find('.activetop').index();
+  console.log(on);
   var options = {
-      horizontal: 1,
-      itemNav: "centered",
-      speed: 600,
-      smart: 1,
-      activateOn: "click",
-      mouseDragging: 1,
-      touchDragging: 1,
-      activateMiddle: 1,
-      releaseSwing: 1,
-      activeClass: "activetop",
-      startAt: $(".tab-nav").find(".activetop").index(), // Use the index of the active tab on load
-      easing: "easeInOutQuart"
+     horizontal: 1,
+     itemNav: 'centered', //basic , centered,
+     speed: 300,
+     smart: 1,
+     activateOn: 'click',
+     mouseDragging: 1,
+     touchDragging: 1,
+     activateMiddle: 1,
+     releaseSwing: 1,
+     activeClass:   'activetop',
+     startAt: on
+     // itemSelector:1
   };
+  var frame = new Sly('.tab-nav-wrapper', options).init();
 
-  var frame = new Sly(".tab-nav-wrapper", options).init();
 
-  // Click event for tab titles
-  const tabtitel = $(".tab-nav li a");
-  tabtitel.click(function(e) {
-      e.preventDefault();
+  // 탭 클릭 이벤트 핸들러 추가
+  $(".tab-nav li a").on("click", function (e) {
+    e.preventDefault();
+    $(".tab-nav li a").removeClass("active");
+    $(this).addClass("active");
+    $(".all-list").hide();
+    let target = $(this).attr("href");
+    $(target).show();
 
-      // Remove 'active' class from all tabs and then add it to the clicked tab
-      tabtitel.removeClass("active");
-      $(this).addClass("active");
-
-      // Hide all content and show the target content
-      $(".all-list").hide();
-      let target = $(this).attr("href");
-      $(target).show();
-
-      // After updating the tab, refresh the Sly instance to the index of the newly activated tab
-      var newIndex = $(this).parent().index(); // Assuming <a> is a direct child of <li>
-      frame.toCenter(newIndex); // Move the slider to the center based on the new index
+    // 탭 클릭 후 Sly.js 다시 로드
+    // reloadSly();
   });
 
-  // Trigger a click on the first tab to initialize the state
-  tabtitel.eq(0).trigger("click");
+  // 초기 탭 클릭
+  $(".tab-nav li a").eq(0).trigger("click");
 });
-
-// =========================================== 수정된 tab-nav 슬라이드 기능
-// window.addEventListener("load", function () {
-//   var on = $('.tab-nav').find('.activetop').index();
-//   console.log(on);
-//   var options = {
-//       horizontal: 1,
-//       itemNav: 'centered',
-//       speed: 600,
-//       smart: 1,
-//       activateOn: 'click',
-//       mouseDragging: 1,
-//       touchDragging: 1,
-//       activateMiddle: 1,
-//       releaseSwing: 1,
-//       activeClass: 'activetop',
-//       startAt: on,
-//       easing: 'easeInOutQuart',
-//   };
-
-//   // Sly 인스턴스 초기화
-//   var frame = new Sly('.tab-nav-wrapper', options).init();
-
-//   // 탭 클릭 이벤트 처리
-//   const tabTitles = $(".tab-nav li a");
-//   tabTitles.click(function (e) {
-//       e.preventDefault();
-
-//       // 활성 클래스 업데이트
-//       tabTitles.removeClass("active");
-//       $(this).addClass("active");
-
-//       // 컨텐츠 보여주기/숨기기
-//       $(".all-list").hide();
-//       let target = $(this).attr("href");
-//       $(target).show();
-
-//       // Sly 캐러셀을 해당 탭의 인덱스로 이동
-//       var newIndex = $(this).parent().index();
-//       frame.toCenter(newIndex);
-//   });
-
-//   // 초기 활성 탭 트리거
-//   if (on >= 0) {
-//       tabTitles.eq(on).trigger("click");
-//   } else {
-//       tabTitles.eq(0).trigger("click");
-//   }
-// });
-
 
 
 // ===========================================  우측토글
