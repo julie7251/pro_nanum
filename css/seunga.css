@@ -376,14 +376,14 @@ nav {
 .sec1-main-text h4{
   font-family: "KBO-Dia-Gothic_medium";
   font-size: 32px;
-  text-align: center;
-  letter-spacing: 1.5px;
-  text-align: center;
+  letter-spacing: 1px;
+  text-align: left;
   display: block;
   position: absolute;
-  top: -3%;
+  top: -20%;
+  padding: 40px;
   color: #333;
-  padding-left: 3%;
+  line-height: 1.3em;
 }
 .service-box {
   /* background-color: pink; */
@@ -392,7 +392,7 @@ nav {
   justify-content: space-between;
   gap: 6%;
   margin: 0 auto;
-  padding: 6% 3% 0 3%;
+  padding: 6% 4% 0 4%;
 }
 .service-box figure {
   width: calc(100% / 3);
@@ -400,13 +400,11 @@ nav {
   position: relative;
   overflow: hidden;
   margin: 10px;
-  /* min-width: 230px;
-    max-width: 315px; */
-  width: 100%;
+  /* width: 100%; */
   color: #fff;
   text-align: left;
-  line-height: 1.4em;
-  font-size: 18px;
+  line-height: 1.3em;
+  /* font-size: 18px; */
 }
 .service-box figure img {
   width: 100%;
@@ -422,7 +420,6 @@ transform: translateX(-50%);
 padding: 20px;
 background-color: rgba(0, 0, 0, 0.2);
 width: 100%;
-top: center;
 display: block;
 text-align: center;
 }
@@ -432,9 +429,8 @@ text-align: center;
   /* top: calc(77%); */
   width: 100%;
   background-color: #134aa9;
-  padding: 15px 25px 65px;
+  padding: 15px 25px 100px;
 }
-
 .service figcaption:before {
   position: absolute;
   content: "";
@@ -442,54 +438,45 @@ text-align: center;
   bottom: 100%;
   left: 0;
   width: 100%;
-  height: 80px;
+  /* height: 60px; */
   /* background-image: -webkit-linear-gradient(top, transparent 0%,  #134aa9 100%); */
   /* background-image: linear-gradient(to bottom, transparent 0%,  #134aa9 100%); */
 }
 figcaption h3,
 figcaption p {
-  letter-spacing: 0.3px;
-  margin: 0 0 8px;
+  letter-spacing: 1px;
+  /* margin: 0 0 8px; */
   /* color: red; */
 }
 .service h3 {
-  /* color: #134AA9; */
-  font-weight: 300;
   font-size: 28px;
-  line-height: 1.4em;
+  line-height: 1.3em;
   font-family: "KBO-Dia-Gothic_medium";
   text-align: center;
 }
 .service p {
-  font-size: 0.9em;
   letter-spacing: 0.5px;
-  opacity: 0.9;
   font-size: 18px;
+  margin-top: 10px;
 }
-.service a {
+/* .service a {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 2;
-}
-.service:hover figcaption,
+} */
+/* .service:hover figcaption,
 .service.hover figcaption {
   top: 80px;
-}
+} */
 .service * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-
-/* .service img {
-  max-width: 100%;
-  vertical-align: top;
-} */
-/* =============================== */
 /* 기본적으로 숨겨진 figcaption 요소 */
 .service figcaption {
   top: 100%; /* 이미지 아래에 숨겨짐 */
@@ -498,13 +485,13 @@ figcaption p {
 
 /* 호버 상태일 때 figcaption 요소를 보이도록 설정 */
 .service:hover figcaption {
-  top: calc(100% - 18vh); /* 이미지 아래로 이동하여 나타남 */
+  top: calc(100% - 20vh); /* 이미지 아래로 이동하여 나타남 */
 }
 .service3-text{
   position: absolute;
   top: 15%;
   left: 0;
-  padding: 0 10% 0 10% ;
+  padding: 15px 25px 100px;
 }
 .service3-text span{
   font-size: 28px;
@@ -513,9 +500,33 @@ figcaption p {
 }
 .service3-text p{
   font-size: 18px;
+  text-align: left;
 }
-
 /* ========================================================================== */
+@media screen and (max-width: 1100px) {
+  .sb-img-title1, .sb-img-title2{
+    font-size: 24px;
+  }
+
+
+  .service-box {
+    gap: 2%;
+    padding: 4% 0 0 0;
+    /* background-color: red; */
+  }
+  .service h3 {
+    font-size: 24px;
+  }
+  .service p {
+    font-size: 18px;
+  }
+  .service3-text span{
+    font-size: 24px;
+  }
+  .service3-text p{
+    font-size: 18px;
+  }
+}
 @media screen and (max-width: 1000px) {
   header img {
     width: 150px;
@@ -557,7 +568,7 @@ figcaption p {
   }
   .service-box {
     gap: 2%;
-    padding: 4% 0 0 0;
+    padding: 8% 0 0 0;
     /* background-color: red; */
   }
   .sb-img-title1, .sb-img-title2{
@@ -572,6 +583,7 @@ figcaption p {
   .service3-text{
     padding: 0;
 text-align: center;
+padding: 20px;
 }
   .service3-text span{
     font-size: 22px;
@@ -640,7 +652,7 @@ text-align: center;
   }
   /* 카운트 */
   .counter-wrapper {
-    gap: 15%;
+    gap: 14%;
   }
   .count-title {
     font-size: 30px;
@@ -736,20 +748,55 @@ text-align: center;
 }
 @media screen and (max-width: 450px) {
   .counter-wrapper {      
-   padding: 30px 0;
+   padding: 25px 0;
+  }
+  .counter-wrapper {
+
+    bottom: 6%;
   }
  .counter {
      line-height: 20px;
  }
      .count-title {
-         font-size: 23px;
+         font-size: 24px;
      }
  .sec1-main-text h4 {
-         font-size: 20px;
+         font-size: 22px;
  }
- .section2 {
-         padding: 0px 20px;
+ .section1 {
+   padding: 10% 0 15%;
  }
+ 
+ .sec1-main-text h4{
+  font-size: 22px;
+  top: -40%;
+  padding: 20px;
+}
+.service3-text{
+  top: 25%;
+  left: 12px;
+  padding: 0 5% 0 5% ;
+}
+h3 {
+  display: none;
+ }
+ .service figcaption {
+display: none;
+ }
+.service-box{
+padding-top: 30px;
+}
+ .service3-text span{
+font-size: 14px;
+    }
+ .service3-text p{
+display: none;
+ }
+ .sb-img-title1, .sb-img-title2{
+  font-size: 14px;
+padding: 5px;
+height:30px;
+}
 }
 @media screen and (max-width: 420px) {
   .section1 {
@@ -758,51 +805,78 @@ text-align: center;
   .service:hover figcaption {
     top: 0
   }
- 
-
 }
 @media screen and (max-width: 390px) {
   .count-title {
-    font-size: 18px;
+    font-size: 20px;
   }
   .plus {
     font-size: 10px;
   }
   .count-text {
-    font-size: 12px;
+    font-size: 13.5px;
   }
-  .service h3 {
+  .sec1-main-text h4{
+    font-size: 22px;
+    top: -40%;
+    padding: 20px;
+  }
+  h3 {
     display: none;
    }
    .service figcaption {
 display: none;
    }
-  
-   .service3-text span{
- font-size: 16px;
-      }
+.service-box{
+  padding-top: 20px;
+}
+.service3-text{
+  top: 25%;
+  left: 8px;
+  padding: 2px;
+}
    .service3-text p{
   display: none;
    }
    .sb-img-title1, .sb-img-title2{
-    font-size: 16px;
+    font-size: 14px;
   padding: 5px;
-  height: 55px;
+  height:30px;
   }
 }
 @media screen and (max-width: 320px) {
-  .sec1-title p {
-    font-size: 12px;
+  .sec1-main-text h4{
+/* color: red; */
+font-size: 20px;
+    top: -25%;
+    line-height: 1.3em;
+    letter-spacing: 0;
+ 
+  }
+  .service-box{
+    padding-top: 50px;
   }
   .sb-img-title1, .sb-img-title2{
     font-size: 12px;
-  padding: 4px;
-  height: 40px;
+  padding: 5px;
   }
    .service3-text span{
  font-size: 12px;
  /* padding:0.2px */
       }
-
+      .service3-text{
+        top: 20%;
+        left: 3px;
+        padding: 0;
+      }
+      .service3-text span{
+        font-size: 12px;
+        line-height: 2em;
+        font-family: "KBO-Dia-Gothic_medium";
+      }
+      .service3-text p{
+        font-size: 18px;
+        text-align: left;
+      }
 
 }
