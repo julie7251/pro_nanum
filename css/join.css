@@ -1,10 +1,7 @@
 @charset "utf-8";
 /* 회원가입 */
-header {
-  height: 80px;
-}
 .joinform {
-  padding: 150px 0;
+  padding: 200px 0;
 }
 .join {
   position: relative;
@@ -16,7 +13,7 @@ header {
   cursor: pointer;
 }
 .joinform h1 {
-  font-size: 4vw;
+  font-size: 3vw;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -37,7 +34,7 @@ header {
   height: 15%;
   border: none;
   background-color: #e7ecf1;
-  border-radius: 50px;
+  border-radius: 45px;
 }
 .box2 {
   padding: 5%;
@@ -45,7 +42,7 @@ header {
   height: 15%;
   border: none;
   background-color: #134aa9;
-  border-radius: 50px;
+  border-radius: 45px;
   color: #fff;
 }
 
@@ -67,7 +64,7 @@ i {
     height: 30%;
     border: none;
     background-color: #e7ecf1;
-    border-radius: 50px;
+    border-radius: 45px;
   }
   .box2 {
     padding: 4%;
@@ -75,7 +72,7 @@ i {
     height: 30%;
     border: none;
     background-color: #134aa9;
-    border-radius: 50px;
+    border-radius: 45px;
     color: #fff;
   }
   i {
@@ -92,7 +89,7 @@ i {
     text-align: center;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .joinform h1 {
     font-size: 10vw;
     font-weight: bold;
@@ -110,7 +107,7 @@ i {
     height: 50%;
     border: none;
     background-color: #e7ecf1;
-    border-radius: 50px;
+    border-radius: 45px;
   }
   .box2 {
     padding: 5%;
@@ -118,7 +115,7 @@ i {
     height: 50%;
     border: none;
     background-color: #134aa9;
-    border-radius: 50px;
+    border-radius: 45px;
     color: #fff;
   }
   .join h2 {
@@ -139,6 +136,6 @@ i {
   }
   footer{
     width: 100%;
-    height: 470px;
+    height: 450px;
   }
 }
