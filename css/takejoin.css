@@ -38,6 +38,7 @@ input[type="email"] {
   padding: 10px;
   margin: 10px 0;
   float: left;
+  outline: none;
 }
 #buttons > li {
   display: inline-block;
@@ -66,7 +67,3 @@ button {
   text-align: center;
   padding-right: 25px;
 }
-.focused {
-    border: 2px solid #007bff;
-    outline: none; /* 포커스 테두리 제거 */
-  }
