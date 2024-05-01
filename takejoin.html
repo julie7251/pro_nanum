@@ -210,19 +210,7 @@
           alert("가입되었습니다! 로그인창으로 이동합니다.");
         });
       });
-      document.addEventListener("DOMContentLoaded", function () {
-        const inputs = document.querySelectorAll("#user-id, #email, #user-pw1, #user-pw2");
-
-        inputs.forEach((input) => {
-          input.addEventListener("focus", function () {
-            this.classList.add("focused");
-          });
-
-          input.addEventListener("blur", function () {
-            this.classList.remove("focused");
-          });
-        });
-      });
+  
     </script>
   </body>
 </html>

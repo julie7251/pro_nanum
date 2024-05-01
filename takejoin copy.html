@@ -219,16 +219,6 @@
       alertButton.addEventListener("click", function () {
         alert("신청되었습니다. 승인대기해주세요.");
       });
-
-      // 모든 input 요소에 대한 focus 이벤트 처리
-      ["user-id", "email", "user-pw1", "user-pw2", "joinname", "number"].forEach((id) => {
-        const input = document.getElementById(id);
-        if (input) {
-          // 해당 ID의 요소가 존재하는 경우에만 이벤트를 추가합니다.
-          input.addEventListener("focus", () => input.classList.add("focused"));
-          input.addEventListener("blur", () => input.classList.remove("focused"));
-        }
-      });
     </script>
   </body>
 </html>
