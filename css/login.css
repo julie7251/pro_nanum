@@ -76,7 +76,7 @@ form > input {
   width: 25%;
   height: 50px;
   text-align: left;
-
+border-radius: 7px;
   margin: 0 auto;
 
   margin-top: 10px;
