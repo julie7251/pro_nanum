@@ -234,7 +234,7 @@ nav {
   left: 100%;
   /* top: 20px; */
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 30px);
   background-color: #fff;
   /* opacity: 1; */
   transition: all 0.3s;
