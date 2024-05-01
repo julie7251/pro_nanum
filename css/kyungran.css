@@ -1,5 +1,26 @@
 @charset "utf-8";
 /* 경란 */
+/* 공통 */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body {
+  font-family: "KBO-Dia-Gothic_light", sans-serif;
+  font-size: 16px;
+  /* padding: 25px; */
+  background-color: #ffff;
+  color: #333;
+  text-align: center;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 /* 섹션2 */
 .section2 {
   max-width: 1400px;
@@ -37,7 +58,7 @@
   border-radius: 50px;
   /* border: 1.9px solid #134aa9; */
   color: #333333;
-  background: #f4f4f4;
+  background: rgb(249 249 249);
   text-decoration: none;
 }
 .tab-nav a:hover,
@@ -105,16 +126,43 @@
   z-index: 99;
   border-radius: 10px;
 }
-.area-list.active {
+/* 스크롤 커스텀 */
+.area-list::-webkit-scrollbar , .monthly-list::-webkit-scrollbar , .order-list::-webkit-scrollbar{
+width: 10px;
+}
+.area-list::-webkit-scrollbar-track , .monthly-list::-webkit-scrollbar-track , .order-list::-webkit-scrollbar-track { 
+  background-color: rgb(221 221 221);
+}
+.area-list::-webkit-scrollbar-thumb , .monthly-list::-webkit-scrollbar-thumb , .order-list::-webkit-scrollbar-thumb{ 
+  background-color: rgb(192 192 192);
+}
+.area-list::-webkit-scrollbar-button , .monthly-list::-webkit-scrollbar-button , .order-list::-webkit-scrollbar-button {
+  display: none;
+}
+/* 코너에 라운드 효과 */
+.area-list::-webkit-scrollbar-track ,
+.area-list::-webkit-scrollbar-thumb ,
+.monthly-list::-webkit-scrollbar-track ,
+.monthly-list::-webkit-scrollbar-thumb ,
+.order-list::-webkit-scrollbar-track ,
+.order-list::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+}
+/* hover 효과 */
+.area-list::-webkit-scrollbar-thumb:hover , .monthly-list::-webkit-scrollbar-thumb:hover , .order-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(175, 174, 174);
+  transition: all 0.2s; /* 작동 안 됨 */
+}
+.area-list.active , .monthly-list.active , .order-list.active {
   display: block;
 }
-.area-list:hover {
+.area-list:hover , .monthly-list:hover , .order-list:hover {
   cursor: pointer;
 }
-.area-list li:hover {
-  color: #134aa9;
+.area-list li:hover , .monthly-list li:hover , .order-list li:hover {
+  color: #0c429e;
   cursor: pointer;
-  background-color: #f1f3f7;
+  background-color: #fcfcfc;
 }
 .area-list > li {
   position: relative;
@@ -162,17 +210,6 @@
   z-index: 99;
   border-radius: 10px;
 }
-.monthly-list.active {
-  display: block;
-}
-.monthly-list:hover {
-  cursor: pointer;
-}
-.monthly-list li:hover {
-  color: #134aa9;
-  cursor: pointer;
-  background-color: #f1f3f7;
-}
 .monthly-list > li {
   position: relative;
   display: block;
@@ -214,17 +251,6 @@
   z-index: 99;
   border-radius: 10px;
 }
-.order-list.active {
-  display: block;
-}
-.order-list:hover {
-  cursor: pointer;
-}
-.order-list li:hover {
-  color: #134aa9;
-  cursor: pointer;
-  background-color: #f1f3f7;
-}
 .order-list > li {
   position: relative;
   display: block;
@@ -253,16 +279,20 @@
   position: relative;
 }
 .img-box a::after {
-  content: "";
-  display: none;
-  position: absolute;
-  background: url("../images/kyungran/잔여\ 10명\ 모집\ 15명.png") no-repeat;
-  bottom: 0;
-  top: 0px;
-  left: 50%;
-  width: 198px;
-  transform: translateX(-50%);
-  transition: all 0.1s;
+    content: "잔여10명    |   모집10명";
+    display: none; /* 기본적으로 보이지 않도록 설정 */
+    position: absolute;
+    bottom: 0;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%); /* X축 기준으로 50% 이동하여 가운데 정렬 */
+    width: 100%; /* 너비를 100%로 설정하여 부모 요소를 꽉 채움 */
+    text-align: center; /* 텍스트를 중앙으로 정렬 */
+    font-weight: 500;
+    font-size: 18px !important;
+    color: #ffffff;
+    transition: all 0.1s;
+    white-space: pre; /* 공백 유지 */
 }
 
 .img-box > a > .img1 {
@@ -273,6 +303,7 @@
 }
 .img-box > a:hover .img1 {
   filter: brightness(0.4);
+  /* opacity: 0.7; */
 }
 .img-box > a:hover::after {
   display: block;
@@ -381,21 +412,30 @@
   border-bottom: 1px solid #dddddd;
   padding-bottom: 7px;
 }
-.CM-box .CM .plus-icon,
-.FAQ-box .FAQ .plus-icon {
+.CM-box .CM .fa-plus ,
+.FAQ-box .FAQ .fa-plus {
   position: absolute;
   top: 36px;
   right: 36px;
-  width: 54px;
-  height: 54px;
   border: none;
   outline: none;
-  background: url("../images/kyungran/pluse-icon-set.png") no-repeat 0px 0px;
+  color: #333;
+  transition: all 0.3s linear;
 }
-.CM-box .CM .plus-icon:hover,
-.FAQ-box .FAQ .plus-icon:hover {
-  background: url("../images/kyungran/pluse-icon-set.png") no-repeat bottom;
+.CM-box:hover .fa-plus ,
+.FAQ-box:hover .fa-plus {
+  transform: rotate( 360deg );
+  color: #0144b8;
 }
+.CM-box:hover ,
+.FAQ-box:hover {
+  color: #0144b8;
+}
+.section3 .CM-box:hover , .section3 .FAQ-box:hover {
+  box-shadow: rgba(0, 0, 0, 0.212) 0px 3px 10px 0px;
+   transform: translateY(-9px);
+  transition: all 0.27s linear;
+  }
 .CM-box .CM a li,
 .FAQ-box .FAQ a li {
   font-size: 19px;
@@ -414,7 +454,7 @@
 }
 .CM-box .CM a:hover li,
 .FAQ-box .FAQ a:hover li {
-  color: #134aa9;
+  color: #4d4d4d;
 }
 .CM-box .CM a li {
   line-height: 31px;
@@ -422,3 +462,20 @@
 .FAQ-box .FAQ a li {
   line-height: 49px;
 }
+
+
+
+/* sub2 */
+/* #gallery_wrap {
+  width: 450px;
+  margin: 0 auto;
+} */
+/* .slider-page li {
+  display: inline;
+}
+#gallery_wrap .bx-wrapper {
+  margin-bottom: 30px;
+}
+.bx-wrapper .bx-controls-direction a {
+  display: none;
+} */
