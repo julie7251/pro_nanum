@@ -33,14 +33,10 @@
   .right-toggle {
     padding: 18px 0 11px;
   }
-  .area-list {
-    top: 44px;
-  }
-  .monthly-list {
-    top: 44px;
-  }
+  .area-list,
+  .monthly-list,
   .order-list {
-    top: 44px;
+    top: 48px;
   }
 }
 @media all and (max-width: 900px) {

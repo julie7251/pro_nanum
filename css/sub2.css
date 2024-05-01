@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* 공통 */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  body {
+    font-family: "KBO-Dia-Gothic_light", sans-serif;
+    font-size: 16px;
+    /* padding: 25px; */
+    background-color: #ffff;
+    color: #333;
+    text-align: center;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  /* 왼쪽 섹션 */
+  #gallery_wrap {
+    width: 450px;
+    margin: 0 auto;
+  }
+  .slider-page li {
+    display: inline;
+  }
+  #gallery_wrap .bx-wrapper {
+    margin-bottom: 30px;
+  }
+  .bx-wrapper .bx-controls-direction a {
+    display: none;
+  }
