@@ -1,0 +1,72 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+  clear: both;
+}
+#container {
+  padding-top: 10%;
+  width: 600px;
+  margin: 0 auto;
+}
+#container h1 {
+  font-size: 3vw;
+  padding: 5%;
+}
+.field {
+  float: left;
+  width: 100px;
+  font-weight: bold;
+  font-size: 0.9em;
+  line-height: 55px;
+  text-align: right;
+  margin-right: 15px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  float: left;
+  width: 350px;
+  height: 35px;
+  border: 1px solid #134aa9;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 10px 0;
+  float: left;
+}
+#buttons > li {
+  display: inline-block;
+}
+
+.r{
+    line-height: 55px;
+padding-right:100px;
+margin: 0 auto;
+display: inline-block;
+}
+button {
+  width: 250px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid #134aa9;
+  background: #134aa9;
+  font-size: 0.9em;
+  border-radius: 7px;
+  color: #fff;
+}
+.error {
+  display: inline-block;
+  color: red;
+  font-size: 13px;
+  text-align: center;
+  padding-right: 25px;
+}
+.focused {
+    border: 2px solid #007bff;
+    outline: none; /* 포커스 테두리 제거 */
+  }

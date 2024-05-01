@@ -54,6 +54,16 @@ form > input {
   width: 65%;
   height: 5vh;
   text-align: left;
+
+border-radius: 7px;
+  margin: 0 auto;
+
+  margin-top: 10px;
+  border: 1px solid #134aa9;
+}
+
+form .loginbutton {
+  display: block;
   margin: 0 auto;
   margin-top: 20px;
   border: none;
