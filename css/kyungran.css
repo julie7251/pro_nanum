@@ -123,7 +123,7 @@ a {
   max-height: 202px;
   min-width: 97px;
   overflow-y: scroll;
-  z-index: 99;
+  z-index: 9;
   border-radius: 10px;
 }
 /* 스크롤 커스텀 */
@@ -207,7 +207,7 @@ width: 10px;
   max-height: 202px;
   min-width: 86px;
   overflow-y: scroll;
-  z-index: 99;
+  z-index: 9;
   border-radius: 10px;
 }
 .monthly-list > li {
@@ -248,7 +248,7 @@ width: 10px;
   padding-bottom: 7px;
   max-height: 202px;
   min-width: 81px;
-  z-index: 99;
+  z-index: 9;
   border-radius: 10px;
 }
 .order-list > li {
@@ -354,7 +354,6 @@ width: 10px;
   width: 39px;
   height: 35px;
   background: url("../images/kyungran/hart-icon_gray.svg") no-repeat center;
-  z-index: 9;
 }
 .img-box .hart-icon:hover {
   bottom: 0; /* 호버 시 아이콘이 살짝 위로 이동 */
