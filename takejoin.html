@@ -128,7 +128,7 @@
         <ul id="user-info">
           <li>
             <label for="user-id" class="field">아이디</label>
-            <input type="text" id="user-id" placeholder="4~15자리의 영문과 숫자로 입력" required autocomplete="off" />
+            <input type="text" id="#user_id" placeholder="4~15자리의 영문과 숫자로 입력" required autocomplete="off" />
             <!-- 에러 메시지 출력을 위한 span -->
             <span class="error" id="user-id-error"></span>
           </li>
@@ -140,7 +140,7 @@
           </li>
           <li>
             <label for="user-pw1" class="field">비밀번호</label>
-            <input type="password" id="user-pw1" placeholder="8자리 이상" required />
+            <input type="password" id="#user_pw" placeholder="8자리 이상" required />
             <!-- 에러 메시지 출력을 위한 span -->
             <span class="error" id="user-pw1-error"></span>
           </li>
@@ -149,11 +149,6 @@
             <input type="password" id="user-pw2" required />
             <!-- 에러 메시지 출력을 위한 span -->
             <span class="error" id="user-pw2-error"></span>
-          </li>
-          <li>
-            <label class="field">메일링 수신</label>
-            <label class="r"><input type="radio" value="yes" name="mailing" /> 예</label>
-            <label class="r"><input type="radio" value="no" name="mailing" /> 아니오</label>
           </li>
         </ul>
         <ul id="buttons">
@@ -167,50 +162,41 @@
       </form>
     </div>
     <script>
-      const register = document.getElementById("register");
-      register.addEventListener("submit", function (event) {
-        // 입력값 검사
-        let userId = document.getElementById("user-id").value;
-        let email = document.getElementById("email").value;
-        let userPw1 = document.getElementById("user-pw1").value;
-        let userPw2 = document.getElementById("user-pw2").value;
-        // 에러메시지 초기화
-        document.getElementById("user-id-error").textContent = "";
-        document.getElementById("email-error").textContent = "";
-        document.getElementById("user-pw1-error").textContent = "";
-        document.getElementById("user-pw2-error").textContent = "";
-        // 아이디 유효성 검사
-        let userIdRegex = /^[a-zA-Z0-9]{4,15}$/; // 아이디는 4~15자리의 영문과 숫자
-        if (!userIdRegex.test(userId)) {
-          document.getElementById("user-id-error").textContent = "아이디는 4~15자리의 영문과 숫자로 이루어져야 합니다.";
-          event.preventDefault();
-        }
-        // 이메일 유효성 검사
-        let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailRegex.test(email)) {
-          document.getElementById("email-error").textContent = "올바른 이메일 주소를 입력하세요.";
-          event.preventDefault();
-        }
-        // 비밀번호 유효성 검사
-        let userPw1Regex = /(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{6,24}/; // 문자와 특수문자 조합의 6~24 자리
-        if (!userPw1Regex.test(userPw1)) {
-          document.getElementById("user-pw1-error").textContent = "문자와 특수문자 조합의 6~24 자리를 입력하세요.";
-          event.preventDefault();
-        }
-        // 비밀번호 확인 유효성 검사
-
-        if (userPw1 !== userPw2) {
-          document.getElementById("user-pw2-error").textContent = "비밀번호를 확인해 주세요";
-          event.preventDefault();
-        }
-
+      $(document).ready(function () {
+        $("#user_id ,#user_pw ,#confirm_pw").on("focus", function () {
+          $(this).addClass("focused");
+        });
+        $("#user_id ,#user_pw ,#confirm_pw").on("blur", function () {
+          $(this).removeClass("focused");
+        });
+        // 회원가입 필드에서 값 가져오기
+        $("#signupForm").submit(function (e) {
+          e.preventDefault(); //폼 제출 방지
+          var userId = $("#user_id").val();
+          var password = $("#user_pw").val();
+          //   정규표현식을 사용한 유효성 검사
+          var idPattern = /^[a-zA-Z0-9]{4,12}$/;
+          var pwPattern = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}$/;
+          // 아이디 유효성 검사
+          if (!idPattern.test(userId)) {
+            $("#user_id").next(".error").text("사용자 ID는 영문자와 숫자로만 이루어진 4~12자여야 합니다.");
+            return;
+          } else {
+            $("#user_id").next(".error").text("");
+          }
+          //   비밀번호 확인 검사
+          if (!pwPattern.test(password)) {
+            $("#user_pw").next(".error").text("비밀번호는 영문자와 숫자의 조합으로 6~12자여야 합니다.");
+            return;
+          } else {
+            $("#user_pw").next(".error").text("");
+          }
+        });
         // 버튼을 클릭하면 얼럿 창을 띄우는 이벤트 처리
-        const alertButton = document.getElementById("alertjoin");
-        alertButton.addEventListener("click", function () {
-          alert("가입되었습니다! 로그인창으로 이동합니다.");
+        $("#alertBtn").click(function () {
+          alert("가입되었습니다. 로그인으로이동합니다.");
         });
       });
-  
     </script>
   </body>
 </html>
