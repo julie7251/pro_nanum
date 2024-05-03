@@ -46,23 +46,47 @@
     <!-- <script src="js/prefixfree.min.js"></script> -->
     <script src="js/respond.min.js"></script>
     <script src="js/seunga.js"></script>
+    <script src="js/sub2.js"></script>
     <script src="js/minju.js"></script>
   </head>
   <body>
     <header>
-      <nav class="top-nav">
-        <a href="index.html"><img src="images/logo_bg2.png" alt="로고이미지" /></a>
-        <ul class="top-menu">
+      <div class="hd-inner">
+        <nav class="top-nav" id="nav">
+          <a href="#"><img src="images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
+
+          <ul class="top-menu">
+            <li><a href="#">서비스 소개</a></li>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">게시판</a></li>
+            <li><a href="#">후기</a></li>
+            <div class="log">
+              <li><a href="login.html">로그인</a></li>
+              <li><a href="join.html">회원가입</a></li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+      <!-- 햄버거 버튼 -->
+      <button class="m-bt">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <!-- 모바일 메뉴 리스트 -->
+      <div class="nav-mb">
+        <img src="images/seunga/logo.png" alt="로고이미지" />
+        <ul class="nav-mb-gnb">
           <li><a href="#">서비스 소개</a></li>
           <li><a href="#">프로그램</a></li>
           <li><a href="#">게시판</a></li>
           <li><a href="#">후기</a></li>
-          <div class="log">
-            <li><a href="login.html">로그인</a></li>
-            <li><a href="join.html">회원가입</a></li>
-          </div>
         </ul>
-      </nav>
+        <div class="m-log">
+          <li><a href="login.html">로그인</a></li>
+          <li><a href="join.html">회원가입</a></li>
+        </div>
+      </div>
     </header>
 
     <!-- 경란 -->
@@ -133,8 +157,7 @@
                   <p>봉사혜택&nbsp: &nbsp봉사시간 등록, 간식 제공</p>
                   <p>모집인원&nbsp: &nbsp15명</p>
                   <p>자격요건&nbsp: &nbsp해당 일자에 참여가 가능하신 분</p>
-                  <p>문의전화&nbsp: &nbsp성서복지관 담당 이수현 T. (053)-263-1212</p>
-                  <p>문의전화&nbsp: &nbsp성서복지관 담당 이수현<br> T. (053)-263-1212</p>
+                  <p>문의전화&nbsp: &nbsp성서복지관 담당 이수현&nbsp&nbspT.(053)-263-1212</p>
                 </div>
               </div>
               <div class="info-box2">
@@ -198,6 +221,7 @@
           autoControls: false,
           pagerCustom: ".slider-page",
           startSlide: 0, // 첫 번째 이미지로 시작하도록 설정
+          responsive: true,
           // slideWidth: 500,
           mode: "horizontal",
           adaptiveHeight: true, // 이미지에 맞게 슬라이더 높이 조절
@@ -205,24 +229,24 @@
       });
     </script>
 
-    <!-- <footer>
-        <div class="inner">
-          <div class="right">
-            <h1 class="nanum">나눔 <span>메이트</span></h1>
-            <p>
-              나눔메이트는 사회에 기여하고자 하는 분들을 위한 소중한 커뮤니티입니다. <br />
-              서비스 이용약관 개인정보 처리방침
-              <br />
-              <br />
-              Copyright (C)나눔메이트. All rights reserved.
-            </p>
-          </div>
-          <div class="left">
-            <div class="tell"><img src="images/minju/tell.png" alt="tell" />문의하기</div>
-            <button class="oline">온라인문의</button>
-            <button class="checklist">참여정보확인</button>
-          </div>
-        </div>
-      </footer> -->
+<footer>
+  <div class="inner">
+    <div class="right">
+      <h1 class="nanum">나눔 <span>메이트</span></h1>
+      <p>
+        나눔메이트는 사회에 기여하고자 하는 분들을 위한 소중한 커뮤니티입니다. <br />
+        서비스 이용약관 | 개인정보 처리방침
+        <br />
+        <br />
+        Copyright (C)나눔메이트. All rights reserved.
+      </p>
+    </div>
+    <div class="left">
+      <div class="tell"><img src="images/minju/tell.png" alt="tell" />문의하기</div>
+      <button class="oline">온라인문의</button>
+      <button class="checklist">참여정보확인</button>
+    </div>
+  </div>
+</footer>
   </body>
 </html>
