@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PP6TD7FK");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>나눔메이트</title>
@@ -37,7 +51,7 @@
     <!-- <link rel="stylesheet" href="css/kyungran.css " /> -->
     <link rel="stylesheet" href="css/minju.css " />
     <!-- <link rel="stylesheet" href="css/res_kyungran.css" /> -->
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login.css">
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- 제이쿼리 -->
@@ -48,18 +62,32 @@
     <!-- Js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/html5shiv.js"></script>
-    <script src="js/prefixfree.min.js"></script>
+    <!-- <script src="js/prefixfree.min.js"></script> -->
     <script src="js/respond.min.js"></script>
     <script src="js/seunga.js"></script>
     <!-- <script src="js/kyungran.js"></script> -->
     <!-- <script src="js/minju.js"></script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L34VXKLKJD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-L34VXKLKJD");
+    </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP6TD7FK" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- 승아 -->
     <header>
       <div class="hd-inner">
         <nav class="top-nav" id="nav">
-          <a href="index.html"><img src="images/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
+          <a href="#"><img src="images/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
 
           <ul class="top-menu">
             <li><a href="#">서비스 소개</a></li>
@@ -98,10 +126,10 @@
       <div class="login">
         <h1>로그인</h1>
         <form id="signupForm">
-          <input type="text" name="userName" placeholder="아이디" id="user_id" required/ />
+          <input type="text" name="userName" placeholder="아이디" id="user_id"required/ />
           <span class="error"></span>
           <!-- 에러메시지 출력할 요소 -->
-          <input type="text" name="userPassword" placeholder="비밀번호" id="user_pw" required/ />
+          <input type="text" name="userPassword" placeholder="비밀번호" id="user_pw"required/ />
           <span class="error"></span>
           <!-- 에러메시지 출력할 요소 -->
           <div class="check">
