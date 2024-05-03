@@ -1,4 +1,6 @@
 @charset "utf-8";
+/* 테두리 강조 스타일 */
+
 * {
   padding: 0;
   margin: 0;
@@ -7,66 +9,85 @@
 ul,
 li {
   list-style: none;
-  clear: both;
 }
 #container {
-  padding-top: 10%;
-  width: 600px;
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  margin: 200px auto;
+  max-width: 370px;
+  min-width: 300px;
 }
 #container h1 {
-  font-size: 3vw;
-  padding: 5%;
+  position: relative;
+  font-size: 2vw;
+  margin-left: 40px;
+  margin-bottom: 10%;
 }
-.field {
-  float: left;
-  width: 100px;
+#register {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px;
+}
+#register ul {
+  width: 100%;
+  margin: 0 auto;
   font-weight: bold;
   font-size: 0.9em;
-  line-height: 55px;
-  text-align: right;
-  margin-right: 15px;
 }
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  float: left;
-  width: 350px;
+#register ul li {
+  width: 100%;
+}
+#register ul li label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  margin-right: 5px;
+}
+#register ul li input {
+  width: 70%;
   height: 35px;
   border: 1px solid #134aa9;
   border-radius: 7px;
   padding: 10px;
   margin: 10px 0;
-  float: left;
   outline: none;
 }
-#buttons > li {
-  display: inline-block;
-}
-
-.r{
-    line-height: 55px;
-padding-right:100px;
-margin: 0 auto;
-display: inline-block;
-}
-button {
-  width: 250px;
-  height: 50px;
-  margin-right: 10px;
-  border: 1px solid #134aa9;
-  background: #134aa9;
-  font-size: 0.9em;
-  border-radius: 7px;
-  color: #fff;
-}
-button a {
-  color: #fff;
-}
 .error {
-  display: inline-block;
+  display: block;
   color: red;
   font-size: 13px;
   text-align: center;
-  padding-right: 25px;
+}
+#buttons {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+}
+#buttons button {
+  margin: 0 auto;
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background-color: #134aa9;
+  text-align: center;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#buttons button a {
+  color: #fff;
+}
+/* 반응형 */
+/* ========================================== */
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 320px) {
 }

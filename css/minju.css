@@ -9,7 +9,7 @@ body {
   width: 80px;
   position: fixed;
   right: 10px;
-  bottom: 75%;
+  bottom:15%;
   z-index: 99999;
   display: flex;
   flex-direction: column;
@@ -20,14 +20,6 @@ body {
 }
 .pop-button .chat-btn img {
   width: 100%;
-}
-.pop-button span {
-  font-family: "KBO-Dia-Gothic_light";
-  position: absolute;
-  top: 38px;
-  left: 13px;
-  color: #fff;
-  z-index: 9999999;
 }
 .pop-button .chat-btn {
   animation: updown 1.5s infinite;
@@ -42,7 +34,7 @@ body {
 .top-button .top-btn {
   display: block;
   position: fixed;
-  bottom: 68%;
+  bottom: 8%;
   right: 20px;
   background: #fff;
   box-shadow: none;
