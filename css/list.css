@@ -34,7 +34,6 @@ a {
 font-weight: bold;
 }
 
-
 /* 섹션2 */
 .section2 {
   max-width: 1400px;
@@ -45,7 +44,7 @@ font-weight: bold;
 .section-tite {
   display: block;
   font-size: 32px;
-  padding: 60px;
+  padding: 5%;
   font-weight: bold;
 }
 /* 카테고리 */
@@ -53,6 +52,7 @@ font-weight: bold;
   overflow: hidden;
   width: 674px;
   margin: 0 auto;
+  padding-bottom: 5%;
 }
 .tab-nav {
   display: flex;
