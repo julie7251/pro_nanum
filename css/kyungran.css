@@ -367,13 +367,15 @@ width: 10px;
   display: block;
   margin: auto;
 }
-.pgn > button {
+.pgn > a {
+  display: inline-block;
   position: relative;
   cursor: pointer;
   font-family: inherit;
   font-size: 16px;
   padding: 15px 90px;
   line-height: 10px;
+  color: #333;
   border: 1px solid #cfcfcf;
   border-radius: 7px;
   background-color: #fff;
