@@ -51,7 +51,7 @@
     <!-- <link rel="stylesheet" href="css/kyungran.css " /> -->
     <link rel="stylesheet" href="css/minju.css " />
     <!-- <link rel="stylesheet" href="css/res_kyungran.css" /> -->
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css" />
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- 제이쿼리 -->
@@ -87,11 +87,7 @@
     <header>
       <div class="hd-inner">
         <nav class="top-nav" id="nav">
-
           <a href="index.html"><img src="images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
-
-          <a href="index.html"images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
-
 
           <ul class="top-menu">
             <li><a href="#">서비스 소개</a></li>
@@ -113,7 +109,7 @@
       </button>
       <!-- 모바일 메뉴 리스트 -->
       <div class="nav-mb">
-        <img src="images/logo.png" alt="로고이미지" />
+        <img src="images/seunga/logo.png" alt="로고이미지" />
         <ul class="nav-mb-gnb">
           <li><a href="#">서비스 소개</a></li>
           <li><a href="#">프로그램</a></li>
@@ -133,7 +129,7 @@
           <input type="text" name="userName" placeholder="아이디" id="user_id"required/ />
           <span class="error"></span>
           <!-- 에러메시지 출력할 요소 -->
-          <input type="text" name="userPassword" placeholder="비밀번호" id="user_pw"required/ />
+          <input type="password" name="userPassword" placeholder="비밀번호" id="user_pw"required/ />
           <span class="error"></span>
           <!-- 에러메시지 출력할 요소 -->
           <div class="check">
@@ -143,9 +139,9 @@
           <button class="loginbutton"><a href="index.html" id="alertBtn">로그인</a></button>
           <button class="joinbutton"><a href="join.html">회원가입</a></button>
           <div class="icon">
-            <a href="#"><img src="images/minju/icon1.png" alt="카카오" /></a>
-            <a href="#"><img src="images/minju/icon4.png" alt="인스타" /></a>
-            <a href="#"><img src="images/minju/icon5.png" alt="페이스북" /> </a>
+            <a href="#"><img src="images/minju/icon1.png" alt="카카오" id="alertkakao" /></a>
+            <a href="https://www.instagram.com/"><img src="images/minju/icon4.png" alt="인스타" id="alertinsta"/></a>
+            <a href="https://www.facebook.com/?locale=ko_KR"><img src="images/minju/icon5.png" alt="페이스북" id="alertfacebook" /> </a>
           </div>
         </form>
       </div>
@@ -205,6 +201,41 @@
           alert("환영합니다! 로그인되었습니다.");
         });
       });
+      //카카오 실행
+      $(document).ready(function () {
+        $("#alertkakao").click(function () {
+          alert("준비중입니다.");
+        });
+      });  
+      // 인스타그램 실행
+      $(document).ready(function() {
+    $("#alertinsta").click(function(event) {
+        var confirmed = confirm("인스타그램으로 로그인하시겠습니까?");
+        if (confirmed) {
+            // 확인을 눌렀을 때 실행할 동작
+            alert("인스타그램으로 로그인합니다.");
+        } else {
+            // 취소를 눌렀을 때 실행할 동작
+            event.preventDefault(); // 클릭 이벤트를 취소함
+            alert("취소되었습니다.");
+        }
+    });
+});
+//페이스북 실행
+$(document).ready(function() {
+    $("#alertfacebook").click(function(event) {
+        var confirmed = confirm("페이스북으로 로그인하시겠습니까?");
+        if (confirmed) {
+            // 확인을 눌렀을 때 실행할 동작
+            alert("페이스북으로 로그인합니다.");
+        } else {
+            // 취소를 눌렀을 때 실행할 동작
+            event.preventDefault(); // 클릭 이벤트를 취소함
+            alert("취소되었습니다.");
+        }
+    });
+});
+
     </script>
   </body>
 </html>

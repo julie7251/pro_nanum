@@ -6,7 +6,7 @@
 /* 승아추가 */
 /* 회원가입 */
 .joinform {
-  padding: 150px 0;
+  padding: 300px 0;
 }
 .join {
   position: relative;
@@ -39,7 +39,7 @@
   height: 15%;
   border: none;
   background-color: #e7ecf1;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 .box1 a{
   color: #333;
@@ -50,7 +50,7 @@
   height: 15%;
   border: none;
   background-color: #134aa9;
-  border-radius: 50px;
+  border-radius: 30px;
   color: #fff;
 }
 .box2 a {
@@ -74,7 +74,7 @@ i {
     height: 30%;
     border: none;
     background-color: #e7ecf1;
-    border-radius: 50px;
+    border-radius: 30px;
   }
   .box2 {
     padding: 4%;
@@ -82,7 +82,7 @@ i {
     height: 30%;
     border: none;
     background-color: #134aa9;
-    border-radius: 50px;
+    border-radius: 30px;
     color: #fff;
   }
    i {
@@ -117,7 +117,7 @@ i {
     height: 50%;
     border: none;
     background-color: #e7ecf1;
-    border-radius: 50px;
+    border-radius: 30px;
   }
   .box2 {
     padding: 5%;
@@ -125,7 +125,7 @@ i {
     height: 50%;
     border: none;
     background-color: #134aa9;
-    border-radius: 50px;
+    border-radius: 30px;
     color: #fff;
   }
   .join h2 {
