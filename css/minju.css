@@ -9,7 +9,7 @@ body {
   width: 80px;
   position: fixed;
   right: 10px;
-  bottom:15%;
+  bottom: 15%;
   z-index: 99999;
   display: flex;
   flex-direction: column;
@@ -67,6 +67,15 @@ body {
   }
 }
 /* =============================================== */
+/* 승아 수정 */
+
+.section4 {
+padding: 50px;
+}
+/* .section4 .snstext h1 {
+  font-size: 20px;
+} */
+/* 승아 수정 */
 /* 민주 */
 .inner {
   max-width: 1400px;

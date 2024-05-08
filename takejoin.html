@@ -87,7 +87,7 @@
     <header>
       <div class="hd-inner">
         <nav class="top-nav" id="nav">
-          <a href="index.html"><img src="images/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
+          <a href="index.html"><img src="images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
 
           <ul class="top-menu">
             <li><a href="#">서비스 소개</a></li>
@@ -109,7 +109,7 @@
       </button>
       <!-- 모바일 메뉴 리스트 -->
       <div class="nav-mb">
-        <img src="images/logo.png" alt="로고이미지" />
+        <img src="images/seunga/logo.png" alt="로고이미지" />
         <ul class="nav-mb-gnb">
           <li><a href="#">서비스 소개</a></li>
           <li><a href="#">프로그램</a></li>
@@ -152,60 +152,55 @@
           </li>
         </ul>
         <div class="btn">
-        <ul id="buttons">
-          <li>
-            <button type="submit" class="btn btnBlack" id="alertjoin">가입하기</button>
-          </li>
-          <li>
-            <button type="reseet" class="btn btnGray"><a href="join.html">취소</a></button>
-          </li>
-        </ul>
-      </div>
+          <ul id="buttons">
+            <li>
+              <button type="submit" class="btn btnBlack" id="alertjoin">가입하기</button>
+            </li>
+            <li>
+              <button type="reseet" class="btn btnGray"><a href="join.html">취소</a></button>
+            </li>
+          </ul>
+        </div>
       </form>
     </div>
     <script>
-  const register = document.getElementById("register");
-  register.addEventListener("submit", function (event) {
-    // 입력값 검사
-    let userId = document.getElementById("user-id").value;
-    let email = document.getElementById("email").value;
-    let userPw1 = document.getElementById("user-pw1").value;
-    let userPw2 = document.getElementById("user-pw2").value;
-    // 에러메시지 초기화
-    document.getElementById("user-id-error").textContent = "";
-    document.getElementById("email-error").textContent = "";
-    document.getElementById("user-pw1-error").textContent = "";
-    document.getElementById("user-pw2-error").textContent = "";
-    // 아이디 유효성 검사
-    let userIdRegex = /^[a-zA-Z0-9]{4,15}$/; // 아이디는 4~15자리의 영문과 숫자
-    if (!userIdRegex.test(userId)) {
-      document.getElementById("user-id-error").textContent =
-        "아이디는 4~15자리의 영문과 숫자로 이루어져야 합니다.";
-      event.preventDefault();
-    }
-    // 이메일 유효성 검사
-    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-      document.getElementById("email-error").textContent =
-        "올바른 이메일 주소를 입력하세요.";
-      event.preventDefault();
-    }
-    // 비밀번호 유효성 검사
-    let userPw1Regex = /(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{6,24}/; // 문자와 특수문자 조합의 6~24 자리
-    if (!userPw1Regex.test(userPw1)) {
-      document.getElementById("user-pw1-error").textContent =
-        "문자와 특수문자 조합의 6~24 자리를 입력하세요.";
-      event.preventDefault();
-    }
-    // 비밀번호 확인 유효성 검사
-    
-    if ( userPw1 !== userPw2) {
-     
-      document.getElementById("user-pw2-error").textContent =
-        "비밀번호를 확인해 주세요";
-      event.preventDefault();
-    }
-  });
+      const register = document.getElementById("register");
+      register.addEventListener("submit", function (event) {
+        // 입력값 검사
+        let userId = document.getElementById("user-id").value;
+        let email = document.getElementById("email").value;
+        let userPw1 = document.getElementById("user-pw1").value;
+        let userPw2 = document.getElementById("user-pw2").value;
+        // 에러메시지 초기화
+        document.getElementById("user-id-error").textContent = "";
+        document.getElementById("email-error").textContent = "";
+        document.getElementById("user-pw1-error").textContent = "";
+        document.getElementById("user-pw2-error").textContent = "";
+        // 아이디 유효성 검사
+        let userIdRegex = /^[a-zA-Z0-9]{4,15}$/; // 아이디는 4~15자리의 영문과 숫자
+        if (!userIdRegex.test(userId)) {
+          document.getElementById("user-id-error").textContent = "아이디는 4~15자리의 영문과 숫자로 이루어져야 합니다.";
+          event.preventDefault();
+        }
+        // 이메일 유효성 검사
+        let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+          document.getElementById("email-error").textContent = "올바른 이메일 주소를 입력하세요.";
+          event.preventDefault();
+        }
+        // 비밀번호 유효성 검사
+        let userPw1Regex = /(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{6,24}/; // 문자와 특수문자 조합의 6~24 자리
+        if (!userPw1Regex.test(userPw1)) {
+          document.getElementById("user-pw1-error").textContent = "문자와 특수문자 조합의 6~24 자리를 입력하세요.";
+          event.preventDefault();
+        }
+        // 비밀번호 확인 유효성 검사
+
+        if (userPw1 !== userPw2) {
+          document.getElementById("user-pw2-error").textContent = "비밀번호를 확인해 주세요";
+          event.preventDefault();
+        }
+      });
 
       // 버튼을 클릭하면 얼럿 창을 띄우는 이벤트 처리
       // const alertButton = document.getElementById("alertjoin");
