@@ -189,6 +189,7 @@
           <ul id="buttons">
             <li>
               <button type="submit" class="btn btnBlack" onclick="alertBtn()"">가입하기</button>
+
             </li>
             <li>
               <button type="reseet" class="btn btnGray"><a href="join.html">취소</a></button>
@@ -218,14 +219,13 @@
     </footer>
     <script>
       const register = document.getElementById("register");
-
-      // 기존 이벤트 리스너 추가
       register.addEventListener("submit", function (event) {
         // 입력값 검사
         let userId = document.getElementById("user-id").value;
         let email = document.getElementById("email").value;
         let userPw1 = document.getElementById("user-pw1").value;
         let userPw2 = document.getElementById("user-pw2").value;
+
         // let userName = document.getElementById("user-name").value;
         // let userNumber = document.getElementById("user-unmber").value;
 
@@ -234,6 +234,7 @@
         document.getElementById("email-error").textContent = "";
         document.getElementById("user-pw1-error").textContent = "";
         document.getElementById("user-pw2-error").textContent = "";
+
 
         // // 아이디 유효성 검사
         // let userIdRegex = /^[a-zA-Z0-9]{4,15}$/; // 아이디는 4~15자리의 영문과 숫자
@@ -373,6 +374,7 @@
       //   } else {
       //     this.style.border = ""; // 유효성 검사 통과 시 원래 스타일로 복원
       //   }
+
       // });
     </script>
   </body>

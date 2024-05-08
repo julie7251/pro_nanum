@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css" integrity="sha512-rV4fiystTwIvs71MLqeLbKbzosmgDS7VU5Xqk1IwFitAM+Aa9x/8Xil4CW+9DjOvVle2iqg4Ncagsbgu2MWxKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/html5shiv.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- <script src="js/prefixfree.min.js"></script> -->
     <script src="js/respond.min.js"></script>
     <script src="js/seunga.js"></script>
@@ -53,7 +54,7 @@
     <header>
       <div class="hd-inner">
         <nav class="top-nav" id="nav">
-          <a href="#"><img src="images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
+          <a href="index.html"><img src="images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
 
           <ul class="top-menu">
             <li><a href="#">서비스 소개</a></li>
@@ -125,8 +126,8 @@
                 <div class="line-back"><span class="line-point"></span></div>
                 <div class="count">
                   <span>
-                    <em>신청 5명 &nbsp|&nbsp</em>
-                    잔여 10명
+                    <em>잔여 10명 &nbsp|&nbsp</em>
+                    신청 5명
                   </span>
                   <span>총 15명</span>
                 </div>
@@ -138,7 +139,7 @@
                 <div class="list4 list"><span class="list-span">활동내용 </span><span>벽화그리기 봉사</span></div>
                 <hr />
                 <div class="penalty">*당일취소 시 패널티가 적용됩니다.</div>
-                <button class="apply">신청하기</button>
+                <button class="apply" onclick="call_confirm()">신청하기</button>
                 <div class="share">
                   <span class="span1"><i class="fas fa-regular fa-heart"></i>&nbsp 100</span>
                   <span><i class="fas fa-solid fa-cloud-arrow-down"></i>&nbsp 63</span>
@@ -149,32 +150,38 @@
             <div class="info">
               <h3>상세모집내용</h3>
               <div class="info-box1">
-                <div class="info-inner">
-                  <p>활동내용&nbsp: &nbsp벽화 그리기 봉사</p>
-                  <p>활동일자&nbsp: &nbsp2024. 05. 20. (월)</p>
-                  <p>활동시간&nbsp: &nbsp11:00 ~16:00 (5시간)</p>
-                  <p>활동장소&nbsp: &nbsp대구 달서구 성당로 51길 32</p>
-                  <p>봉사혜택&nbsp: &nbsp봉사시간 등록, 간식 제공</p>
+                <div class="info-inner" id="txtBox">
+                  <span>
+                    <em>벽화활동에 관심이 있는 자원봉사자를 모집합니다.</em><br><br>
+                    '낡은 골목을 개선하여 밝고 문화적인 분위기 조성을 위해 마을 벽화 만들기에 참여를 기다립니다.'
+                  </span>
+                  <p>모집기준&nbsp: 미술관련 전공자 또는 미술에 재능이 있으신 분</p>
+                  <p>모집기간&nbsp: &nbsp신청인원 마감까지</p>
                   <p>모집인원&nbsp: &nbsp15명</p>
-                  <p>자격요건&nbsp: &nbsp해당 일자에 참여가 가능하신 분</p>
-                  <p>문의전화&nbsp: &nbsp성서복지관 담당 이수현&nbsp&nbspT.(053)-263-1212</p>
-                </div>
+                  <p>신청방법&nbsp: &nbsp홈페이지 접수</p>
+                  <p>신청문의&nbsp: &nbsp성서복지관 담당 이수현&nbsp&nbspT.(053)-263-1212</p>
+                </div> 
+                <!-- 확대축소버튼 -->
+                  <p class="btnBox">
+                    <button class="zoomOut"> 가 </button>
+                    <button class="zoomIn"> 가 </button>
+                </p>
               </div>
-              <div class="info-box2">
-                <h3>봉사활동 장소</h3>
-                <p class="p1">대구 달서구 성당로51길 32</p>
-                <p class="p2">반고개역 인근, 성남초 인근</p>
+              <div class="info-box2" >
+                <h3>봉사활동 장소</h3 >
+                <p class="p1" id="txtBox">대구 달서구 성당로51길 32</p>
+                <p class="p2" id="txtBox">반고개역 인근, 성남초 인근</p>
               </div>
               <!-- 지도 -->
               <div class="iframe-container">
-                <iframe class="iframe"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.723769508144!2d128.56956277626418!3d35.85577632036529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e381053d9159%3A0xe41677a1c4f57f04!2z64yA6rWs6rSR7Jet7IucIOuLrOyEnOq1rCDshLHri7nroZw1Meq4uCAzMg!5e0!3m2!1sko!2skr!4v1714701177059!5m2!1sko!2skr"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                <iframe
+                  class="iframe"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.723769508144!2d128.56956277626418!3d35.85577632036529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e381053d9159%3A0xe41677a1c4f57f04!2z64yA6rWs6rSR7Jet7IucIOuLrOyEnOq1rCDshLHri7nroZw1Meq4uCAzMg!5e0!3m2!1sko!2skr!4v1714701177059!5m2!1sko!2skr"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-            </div>
-
+              </div>
             </div>
           </div>
 
@@ -190,8 +197,8 @@
               <div class="line-back"><span class="line-point"></span></div>
               <div class="count">
                 <span>
-                  <em>신청 5명 &nbsp|&nbsp</em>
-                  잔여 10명
+                  <em>잔여 10명 &nbsp|&nbsp</em>
+                  신청 5명
                 </span>
                 <span>총 15명</span>
               </div>
@@ -203,7 +210,7 @@
               <div class="list4 list"><span class="list-span">활동내용 </span><span>벽화그리기 봉사</span></div>
               <hr />
               <div class="penalty">*당일취소 시 패널티가 적용됩니다.</div>
-              <button class="apply" >신청하기</button>
+              <button class="apply" onclick="call_confirm()">신청하기</button>
               <div class="share">
                 <span class="span1"><i class="fas fa-regular fa-heart"></i>&nbsp 100</span>
                 <span><i class="fas fa-solid fa-cloud-arrow-down"></i>&nbsp 63</span>
@@ -229,24 +236,24 @@
       });
     </script>
 
-<footer>
-  <div class="inner">
-    <div class="right">
-      <h1 class="nanum">나눔 <span>메이트</span></h1>
-      <p>
-        나눔메이트는 사회에 기여하고자 하는 분들을 위한 소중한 커뮤니티입니다. <br />
-        서비스 이용약관 | 개인정보 처리방침
-        <br />
-        <br />
-        Copyright (C)나눔메이트. All rights reserved.
-      </p>
-    </div>
-    <div class="left">
-      <div class="tell"><img src="images/minju/tell.png" alt="tell" />문의하기</div>
-      <button class="oline">온라인문의</button>
-      <button class="checklist">참여정보확인</button>
-    </div>
-  </div>
-</footer>
+    <footer>
+      <div class="inner">
+        <div class="right">
+          <h1 class="nanum">나눔 <span>메이트</span></h1>
+          <p>
+            나눔메이트는 사회에 기여하고자 하는 분들을 위한 소중한 커뮤니티입니다. <br />
+            서비스 이용약관 | 개인정보 처리방침
+            <br />
+            <br />
+            Copyright (C)나눔메이트. All rights reserved.
+          </p>
+        </div>
+        <div class="left">
+          <div class="tell"><img src="images/minju/tell.png" alt="tell" />문의하기</div>
+          <button class="oline">온라인문의</button>
+          <button class="checklist">참여정보확인</button>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
