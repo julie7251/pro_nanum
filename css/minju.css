@@ -445,7 +445,7 @@ footer .left button {
     font-weight: 800;
   }
   .section4 .snstext a img {
-    width: 15%;
+    width: 20%;
   }
   .snsnanum {
     margin-top: -15%;
@@ -525,12 +525,12 @@ footer .left button {
     height: 100px;
   }
   .section4 .snstext h1 {
-    font-size: 8vw;
+    font-size: 7vw;
     font-weight: 800;
   }
   .section4 .snstext a img {
     padding-top: 2%;
-    width: 18%;
+    width: 20%;
   }
   .snsnanum {
     display: flex;
