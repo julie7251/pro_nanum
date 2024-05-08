@@ -149,6 +149,9 @@
   .list-wrap > .img-box > a > span {
     font-size: 14px;
   }
+  .img-box > a .img-after {
+    bottom: 75px;
+  }
   .pgn > button {
     font-size: 14px;
     color: #292929;

@@ -127,39 +127,55 @@ a {
   border-radius: 10px;
 }
 /* 스크롤 커스텀 */
-.area-list::-webkit-scrollbar , .monthly-list::-webkit-scrollbar , .order-list::-webkit-scrollbar{
-width: 10px;
+.area-list::-webkit-scrollbar,
+.monthly-list::-webkit-scrollbar,
+.order-list::-webkit-scrollbar {
+  width: 10px;
 }
-.area-list::-webkit-scrollbar-track , .monthly-list::-webkit-scrollbar-track , .order-list::-webkit-scrollbar-track { 
+.area-list::-webkit-scrollbar-track,
+.monthly-list::-webkit-scrollbar-track,
+.order-list::-webkit-scrollbar-track {
   background-color: rgb(221 221 221);
 }
-.area-list::-webkit-scrollbar-thumb , .monthly-list::-webkit-scrollbar-thumb , .order-list::-webkit-scrollbar-thumb{ 
+.area-list::-webkit-scrollbar-thumb,
+.monthly-list::-webkit-scrollbar-thumb,
+.order-list::-webkit-scrollbar-thumb {
   background-color: rgb(192 192 192);
 }
-.area-list::-webkit-scrollbar-button , .monthly-list::-webkit-scrollbar-button , .order-list::-webkit-scrollbar-button {
+.area-list::-webkit-scrollbar-button,
+.monthly-list::-webkit-scrollbar-button,
+.order-list::-webkit-scrollbar-button {
   display: none;
 }
 /* 코너에 라운드 효과 */
-.area-list::-webkit-scrollbar-track ,
-.area-list::-webkit-scrollbar-thumb ,
-.monthly-list::-webkit-scrollbar-track ,
-.monthly-list::-webkit-scrollbar-thumb ,
-.order-list::-webkit-scrollbar-track ,
-.order-list::-webkit-scrollbar-thumb{
-    border-radius: 5px;
+.area-list::-webkit-scrollbar-track,
+.area-list::-webkit-scrollbar-thumb,
+.monthly-list::-webkit-scrollbar-track,
+.monthly-list::-webkit-scrollbar-thumb,
+.order-list::-webkit-scrollbar-track,
+.order-list::-webkit-scrollbar-thumb {
+  border-radius: 5px;
 }
 /* hover 효과 */
-.area-list::-webkit-scrollbar-thumb:hover , .monthly-list::-webkit-scrollbar-thumb:hover , .order-list::-webkit-scrollbar-thumb:hover {
+.area-list::-webkit-scrollbar-thumb:hover,
+.monthly-list::-webkit-scrollbar-thumb:hover,
+.order-list::-webkit-scrollbar-thumb:hover {
   background-color: rgb(175, 174, 174);
   transition: all 0.2s; /* 작동 안 됨 */
 }
-.area-list.active , .monthly-list.active , .order-list.active {
+.area-list.active,
+.monthly-list.active,
+.order-list.active {
   display: block;
 }
-.area-list:hover , .monthly-list:hover , .order-list:hover {
+.area-list:hover,
+.monthly-list:hover,
+.order-list:hover {
   cursor: pointer;
 }
-.area-list li:hover , .monthly-list li:hover , .order-list li:hover {
+.area-list li:hover,
+.monthly-list li:hover,
+.order-list li:hover {
   color: #0c429e;
   cursor: pointer;
   background-color: #fcfcfc;
@@ -279,32 +295,58 @@ width: 10px;
   position: relative;
 }
 .img-box a::after {
-    content: "잔여10명    |   모집10명";
-    display: none; /* 기본적으로 보이지 않도록 설정 */
-    position: absolute;
-    bottom: 0;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%); /* X축 기준으로 50% 이동하여 가운데 정렬 */
-    width: 100%; /* 너비를 100%로 설정하여 부모 요소를 꽉 채움 */
-    text-align: center; /* 텍스트를 중앙으로 정렬 */
-    font-weight: 500;
-    font-size: 18px !important;
-    color: #ffffff;
-    transition: all 0.1s;
-    white-space: pre; /* 공백 유지 */
+  /* content: "잔여 10명 | 모집10명"; */
+  /* display: none; */
+  position: absolute;
+  /* bottom: 109px; */
+  top: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px !important;
+  color: #ffffff; /* 기본 텍스트 색상 */
+  transition: all 0.1s;
+  white-space: pre;
 }
 
+.img-box a::after {
+  /* "잔여 10명" 텍스트의 스타일 */
+  color: #ffffff; /* 파란색 */
+}
 .img-box > a > .img1 {
   position: relative;
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .img-box > a:hover .img1 {
-  filter: brightness(0.4);
-  /* opacity: 0.7; */
+  /* filter:  brightness(80%); */
+  filter:  brightness(80%) invert(0%);
 }
+
+.img-box > a .img-after {
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  width: auto;
+  height: auto;
+  border-radius: 8px 0 8px 0;
+  font-size: 15px;
+  line-height: 15px;
+  color: #fff;
+  /* background-color: #9eb9eee8; */
+  background-color: #2d2d2dfa;
+
+  padding: 9px;
+  margin-bottom: 2px;
+  text-align: center;
+  transition: top 0.3s ease;
+}
+
 .img-box > a:hover::after {
   display: block;
 }
@@ -376,9 +418,15 @@ width: 10px;
   padding: 15px 90px;
   line-height: 10px;
   color: #333;
-  border: 1px solid #cfcfcf;
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 7px;
   background-color: #fff;
+  /* box-shadow: rgba(28, 28, 28, 0.1) 0px 1px 6px -1px, rgba(26, 26, 26, 0.06) 0px 1px 4px -1px; */
+}
+.pgn > a:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px -1px, rgba(0, 0, 0, 0.047) 0px 1px 4px -1px;
+  border: 1px solid rgb(221, 221, 221);
+  color: #5f5f5f;
 }
 /* 섹션3 */
 .section3 {
@@ -404,6 +452,7 @@ width: 10px;
   padding: 37px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
   border-radius: 30px;
+  transition: all 0.27s linear;
 }
 .CM-box .CM span,
 .FAQ-box .FAQ span {
@@ -413,7 +462,7 @@ width: 10px;
   border-bottom: 1px solid #dddddd;
   padding-bottom: 7px;
 }
-.CM-box .CM .fa-plus ,
+.CM-box .CM .fa-plus,
 .FAQ-box .FAQ .fa-plus {
   position: absolute;
   top: 36px;
@@ -423,20 +472,21 @@ width: 10px;
   color: #333;
   transition: all 0.3s linear;
 }
-.CM-box:hover .fa-plus ,
+.CM-box:hover .fa-plus,
 .FAQ-box:hover .fa-plus {
-  transform: rotate( 360deg );
-  color: #0144b8;
+  transform: rotate(360deg);
+  /* color: #0144b8; */
 }
-.CM-box:hover ,
+/* .CM-box:hover ,
 .FAQ-box:hover {
   color: #0144b8;
-}
-.section3 .CM-box:hover , .section3 .FAQ-box:hover {
+} */
+.section3 .CM-box:hover,
+.section3 .FAQ-box:hover {
   box-shadow: rgba(0, 0, 0, 0.212) 0px 3px 10px 0px;
-   transform: translateY(-9px);
+  transform: translateY(-9px);
   transition: all 0.27s linear;
-  }
+}
 .CM-box .CM a li,
 .FAQ-box .FAQ a li {
   font-size: 19px;
@@ -463,8 +513,6 @@ width: 10px;
 .FAQ-box .FAQ a li {
   line-height: 49px;
 }
-
-
 
 /* sub2 */
 /* #gallery_wrap {
