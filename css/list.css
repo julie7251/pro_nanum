@@ -21,9 +21,7 @@ li {
 a {
   text-decoration: none;
 }
-.top-menu {
-  visibility: hidden;
-}
+
 .pagination a {
   color: #333;
   padding: 4px;
