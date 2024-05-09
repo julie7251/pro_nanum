@@ -441,14 +441,15 @@ footer .left button {
     display: none;
   }
   .section4 .snstext h1 {
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: 800;
+    display: block;
   }
   .section4 .snstext a img {
     width: 20%;
   }
   .snsnanum {
-    margin-top: -15%;
+    margin-top: -25%;
     border-radius: 10%;
   }
   .animated-title {
