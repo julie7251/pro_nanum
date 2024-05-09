@@ -41,7 +41,7 @@ a {
   text-decoration: none;
 }
 /* 승아추가 */
-.top-menu{
+.top-menu {
   visibility: hidden;
 }
 /* 승아추가 */
@@ -71,17 +71,21 @@ a {
 }
 
 .check {
-  padding: 30px;
-  font-size: 17px;
+  padding: 20px;
+  font-size: 15px;
+  display: flex;
+  align-self: center;
+  text-align: center;
+  justify-content: center;
 }
 
 form > input {
-  padding-left: 5%;
+  padding-left: 2%;
   display: block;
-  width: 25%;
+  width: 22%;
   height: 50px;
   text-align: left;
-border-radius: 7px;
+  border-radius: 7px;
   margin: 0 auto;
 
   margin-top: 10px;
@@ -92,7 +96,7 @@ form .loginbutton {
   display: block;
   margin: 0 auto;
   padding: 15px;
-  width: 25%;
+  width: 22%;
   border-radius: 7px;
   background-color: #134aa9;
   cursor: pointer;
@@ -100,7 +104,7 @@ form .loginbutton {
 }
 form .joinbutton {
   margin-top: 20px;
-  width: 25%;
+  width: 22%;
   padding: 15px;
   border: none;
   border-radius: 7px;
@@ -146,7 +150,7 @@ form .joinbutton a {
     width: 50px;
     margin: 20px;
   }
-  footer{
+  footer {
     height: 450px;
   }
 }
@@ -170,7 +174,7 @@ form .joinbutton a {
     width: 60%;
   }
 }
-footer{
+footer {
   height: 400px;
 }
 
