@@ -21,9 +21,6 @@ li {
 a {
   text-decoration: none;
 }
-.top-menu {
-  visibility: hidden;
-}
 .pagination a {
   color: #333;
   padding: 4px;
@@ -38,21 +35,21 @@ a {
 .section2 {
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 150px;
-  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 150px;
 }
 .section-tite {
   display: block;
-  font-size: 28px;
-  padding: 2%;
+  font-size: 32px;
+  padding-bottom: 27px;
   font-weight: bold;
 }
 /* 카테고리 */
 .tab-nav-wrapper {
   overflow: hidden;
-  /* width: 674px; */
+  width: 674px;
   margin: 0 auto;
-  padding-bottom: 4%;
+  padding-bottom: 5%;
 }
 .tab-nav {
   display: flex;
@@ -137,7 +134,7 @@ a {
   max-height: 202px;
   min-width: 97px;
   overflow-y: scroll;
-  z-index: 99;
+  z-index: 9;
   border-radius: 10px;
 }
 /* 스크롤 커스텀 */
@@ -237,7 +234,7 @@ a {
   max-height: 202px;
   min-width: 86px;
   overflow-y: scroll;
-  z-index: 99;
+  z-index: 9;
   border-radius: 10px;
 }
 .monthly-list > li {
@@ -278,7 +275,7 @@ a {
   padding-bottom: 7px;
   max-height: 202px;
   min-width: 81px;
-  z-index: 99;
+  z-index: 9;
   border-radius: 10px;
 }
 .order-list > li {
@@ -307,37 +304,39 @@ a {
 }
 .img-box > a {
   position: relative;
+  display: block;
 }
-.img-box a::after {
-  content: "잔여10명    |   모집10명";
-  display: none; /* 기본적으로 보이지 않도록 설정 */
-  position: absolute;
-  bottom: 0;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%); /* X축 기준으로 50% 이동하여 가운데 정렬 */
-  width: 100%; /* 너비를 100%로 설정하여 부모 요소를 꽉 채움 */
-  text-align: center; /* 텍스트를 중앙으로 정렬 */
-  font-weight: 500;
-  font-size: 18px !important;
-  color: #ffffff;
-  transition: all 0.1s;
-  white-space: pre; /* 공백 유지 */
-}
-
 .img-box > a > .img1 {
   position: relative;
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .img-box > a:hover .img1 {
-  filter: brightness(0.4);
-  /* opacity: 0.7; */
+  filter: brightness(80%) invert(0%);
 }
-.img-box > a:hover::after {
-  display: block;
+
+.img-box > a .img-after {
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  width: auto;
+  height: auto;
+  border-radius: 8px 0 8px 0;
+  font-size: 15px;
+  line-height: 15px;
+  color: #fff;
+  /* background-color: #9eb9eee8; */
+  background-color: #2d2d2dfa;
+
+  padding: 9px;
+  margin-bottom: 2px;
+  text-align: center;
+  transition: top 0.3s ease;
 }
+
 .img-box > a > .img1 {
   position: relative;
   width: 100%;
@@ -384,7 +383,6 @@ a {
   width: 39px;
   height: 35px;
   background: url("../images/kyungran/hart-icon_gray.svg") no-repeat center;
-  z-index: 9;
 }
 .img-box .hart-icon:hover {
   bottom: 0; /* 호버 시 아이콘이 살짝 위로 이동 */
@@ -398,16 +396,24 @@ a {
   display: block;
   margin: auto;
 }
-.pgn > button {
+.pgn > a {
+  display: inline-block;
   position: relative;
   cursor: pointer;
   font-family: inherit;
   font-size: 16px;
   padding: 15px 90px;
   line-height: 10px;
-  border: 1px solid #cfcfcf;
+  color: #333;
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 7px;
   background-color: #fff;
+  /* box-shadow: rgba(28, 28, 28, 0.1) 0px 1px 6px -1px, rgba(26, 26, 26, 0.06) 0px 1px 4px -1px; */
+}
+.pgn > a:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px -1px, rgba(0, 0, 0, 0.047) 0px 1px 4px -1px;
+  border: 1px solid rgb(221, 221, 221);
+  color: #5f5f5f;
 }
 @media all and (max-width: 390px) {
 /* 섹션2 */

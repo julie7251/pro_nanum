@@ -40,11 +40,7 @@ li {
 a {
   text-decoration: none;
 }
-/* 승아추가 */
-.top-menu {
-  visibility: hidden;
-}
-/* 승아추가 */
+
 /* 테두리 강조 스타일 */
 .focused {
   outline: none; /* 포커스 테두리 제거 */

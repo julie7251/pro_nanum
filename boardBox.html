@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- 주소.이미지.키워드 추가확인필요 -->
+    <meta name="title" content="일상나눔을 만드는 나눔메이트" />
+    <meta name="keywords" content="나눔메이트, 나눔, 자원봉사, 프로그램, 대구봉사" />
+    <meta name="author" content="WIDEMOBILE" />
+    <meta name="description" content="일상속 나눔을 만들어가는 나눔메이트입니다. 대구에서 다양한 봉사 프로그램을 제공합니다." />
+    <meta name="Robots" content="noindex, nofollow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="일상나눔을 만드는 나눔메이트" />
+    <meta property="og:site_name" content="나눔메이트" />
+    <meta property="og:description" content="일상속 나눔을 만들어가는 나눔메이트입니다. 대구에서 다양한 봉사 프로그램을 제공합니다." />
+    <meta property="og:image" content="https://pro-nanum2.vercel.app/images/visual-img2.png" />
+    <meta property="og:url" content="https://pro-nanum2.vercel.app/" />
+    <link rel="canonical" href="https://pro-nanum2.vercel.app/" />
+    <!-- Twitter -->
+    <meta name="twitter:title" content="일상나눔을 만드는 나눔메이트" />
+    <meta name="twitter:description" content="일상속 나눔을 만들어가는 나눔메이트입니다. 대구에서 다양한 봉사 프로그램을 제공합니다." />
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/seunga.css " />
+    <link rel="stylesheet" href="css/kyungran.css " />
+    <link rel="stylesheet" href="css/minju.css " />
+    <link rel="stylesheet" href="css/res_kyungran.css" />
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sly/1.6.1/sly.min.js"></script>
+    <!-- Js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <!-- <script src="js/prefixfree.min.js"></script> -->
+    <script src="js/respond.min.js"></script>
+    <!-- <script src="js/seunga.js"></script> -->
+    <script src="js/kyungran.js"></script>
+    <script src="js/minju.js"></script>
+    <style>
+      /* 기타
+(컬러)
+대표색
+파랑 #134AA9
+보조색
+밝은 파랑 #1E6BF1
+연한 하늘색 #F0F4FF
+푸터색 #3333
+*/
+      .tabs {
+        /* background-color: yellowgreen; */
+        max-width: 1400px;
+        padding: 2% 0 6%;
+        margin: 0 auto;
+      }
+      /* 메인 탭과 서브 탭 내비게이션 바 */
+
+      .tab_nav,
+      .sub_tab_nav {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 15px 15px 0;
+        background: #f7f7f7;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+      }
+      .sub_tab_nav {
+        margin-top: 20px;
+      }
+      .tab_nav::after,
+      .sub_tab_nav::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #ddd;
+        z-index: 1;
+      }
+
+      /* 메인 및 서브 탭 */
+      .tab_nav li a,
+      .sub_tab_nav li a {
+        display: block;
+        position: relative;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        font-size: 18px;
+        font-weight: 500;
+        color: #000;
+        z-index: 0;
+      }
+
+      /* 활성화된 탭 */
+      .tab_nav li.active a,
+      .sub_tab_nav li.active a {
+        background: transparent;
+        border-color: #ddd;
+        border-radius: 6px 6px 0 0;
+        z-index: 2;
+      }
+
+      /* 탭 컨텐츠 영역 */
+      .tab,
+      .sub_tab {
+        display: none;
+        padding: 15px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+      }
+
+      /* 활성화된 탭 컨텐츠 영역을 표시 */
+      .tab.active,
+      .sub_tab.active {
+        display: block;
+      }
+      .tab_nav {
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        z-index: 999;
+        border: none;
+      }
+      .sub_tab_nav {
+        border: 1px solid #333;
+      }
+      .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      .main_section {
+        display: block;
+        width: 100%;
+        /* background-color: palegoldenrod; */
+        position: relative;
+        min-width: 1400px;
+      }
+      .section_top {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+      }
+      .main_section h1 {
+        font-family: "KBO-Dia-Gothic_medium";
+        font-size: 36px;
+        text-align: left;
+        /* top: 0; */
+        position: a;
+        padding: 12% 4% 2% 14%;
+        color: #fff;
+        background: url(images/seunga/sec1-bg.png);
+      }
+      #board {
+        width: 100%;
+        /* max-width: 1400px; */
+        /* margin: 0 auto; */
+        padding: 30px 0;
+        /* background-color: olive; */
+      }
+      .board-hd {
+        width: 100%;
+        height: 10%;
+        background-color: #134aa9;
+        color: #fff;
+        text-align: left;
+        padding: 30px;
+      }
+      .board-hd-inner {
+        /* width: 1400px; */
+        margin: 0 auto;
+        /* background-color: skyblue; */
+      }
+      .tab-menu {
+        position: relative;
+        display: flex;
+        gap: 5%;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+      .tab-menu li a {
+        color: #fff;
+      }
+      /* ====================== */
+      .collapsible {
+        color: #333;
+        background-color: #fff;
+        cursor: pointer;
+        padding: 30px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 22px;
+        font-family: "KBO-Dia-Gothic_medium";
+      }
+
+      .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #f0f4ff;
+        font-size: 18px;
+        text-align: left;
+        letter-spacing: 1px;
+        line-height: 3rem;
+        /* padding: 20px; */
+      }
+
+      .collapsible:after {
+        content: "\002B";
+        color: #134aa9;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+      /* .active:after {
+            content: "\2212";
+            color: #134AA9;
+        } */
+      /* ====================== */
+
+      ul {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+      }
+      /* 
+            게시판 목록 행 단위 
+            목록 요소 자체를 가운데 정렬하기
+            ul 기본 가로 크기는 100%이므로, 가로 크기를 지정해줘야 가운데로 정렬할 수 있다.
+            가운데 정렬
+            번호, 제목, 작성자, 작성일, 조회, 좋아요 와 데이터 정렬
+        */
+      .board_row {
+        width: 100%;
+        border-bottom: solid 1px gray;
+        margin: 2px 0 0 0;
+      }
+
+      /* 게시글 목록 공통 개별 요소 속성 */
+      li {
+        list-style: none;
+        float: left;
+        text-align: center;
+        /* padding: 0;
+            margin: 0; */
+      }
+
+      /* 번호, 제목, 작성자, 작성일, 조회 row의 style 설정 */
+      .title_row > li {
+        height: 50px;
+        line-height: 50px;
+        background: rgb(233, 233, 233);
+        border-top: solid 2px rgb(0, 0, 0);
+        /* border-right:solid 1px gray; */
+      }
+
+      /* 게시글 목록 데이터 개별 요소 속성 */
+      .data_row > li {
+        height: 40px;
+        line-height: 40px;
+        /* border-right:solid 1px gray; */
+      }
+
+      /* 요소들의 너비 설정 */
+      /* .w70 {width:70px; }
+        .w500 {width:500px; }
+        .w120 {width:120px; }
+        .w100 {width:100px; } */
+      .w70 {
+        width: 70px;
+      }
+      .w500 {
+        width: 500px;
+      }
+      .w120 {
+        width: 120px;
+      }
+      .w100 {
+        width: 100px;
+      }
+
+      /* .w70 {width:35px; }
+        .w500 {width:250px; }
+        .w120 {width:60px; }
+        .w100 {width:50px; } */
+
+      /* 게시판 목록 박스 */
+      .notice_board {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        /* 구성 요소 세로로 배치 */
+        flex-direction: column;
+        position: relative;
+      }
+      .pagination {
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+      }
+      .pagination button {
+        font-family: "KBO-Dia-Gothic_light";
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        padding: 2px;
+        margin-top: 20px;
+      }
+
+      /* 전체 중앙 정렬 */
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4% 0 4% 0;
+      }
+      @media screen and (max-width: 768px) {
+        /* 요소들의 너비 설정 */
+
+        /* .w70 {width:70px; }
+        .w500 {width:500px; }
+        .w120 {width:120px; }
+        .w100 {width:100px; } */
+        .w70 {
+          width: 17.5px;
+        }
+        .w500 {
+          width: 125px;
+        }
+        .w120 {
+          width: 30px;
+        }
+        .w100 {
+          width: 25px;
+        }
+      }
+      .pagination button:hover {
+        color: #134aa9;
+        font-weight: bold;
+      }
+      #write {
+        font-family: "KBO-Dia-Gothic_light";
+        padding: 5px 10px;
+        position: absolute;
+
+        top: -8%;
+        right: 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 승아 -->
+    <header>
+      <div class="hd-inner">
+        <nav class="top-nav" id="nav">
+          <a href="index.html"><img src="images/seunga/logo_bg2.png" alt="로고이미지2" class="logo-img" /></a>
+
+          <ul class="top-menu">
+            <li><a href="#">서비스 소개</a></li>
+            <li><a href="#">후기</a></li>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">게시판</a></li>
+            <div class="log">
+              <li><a href="login.html">로그인</a></li>
+              <li><a href="join.html">회원가입</a></li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+      <!-- 햄버거 버튼 -->
+      <button class="m-bt">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <!-- 모바일 메뉴 리스트 -->
+      <div class="nav-mb">
+        <img src="images/seunga/logo.png" alt="로고이미지" />
+        <ul class="nav-mb-gnb">
+          <li><a href="#">서비스 소개</a></li>
+          <li><a href="#">프로그램</a></li>
+          <li><a href="#">게시판</a></li>
+          <li><a href="#">후기</a></li>
+        </ul>
+        <div class="m-log">
+          <li><a href="login.html">로그인</a></li>
+          <li><a href="join.html">회원가입</a></li>
+        </div>
+      </div>
+    </header>
+    <div class="main_section">
+      <div class="section_top">
+        <h1>게시판</h1>
+      </div>
+      <div class="tabs">
+        <ul class="tab_nav">
+          <li><a href="#tab1">자주묻는 질문</a></li>
+          <li><a href="#tab2">커뮤니티</a></li>
+        </ul>
+
+        <div class="tab" id="tab1">
+          <div class="board-section" id="board">
+            <div class="FAQ-box" id="board-1">
+              <button type="button" class="collapsible" onclick="collapse(this);">Q. 나눔메이트는 어떤 서비스인가요?</button>
+              <div class="content">
+                <p>
+                  <strong>A.</strong> 나눔메이트는 봉사를 하려는 사람들에게 봉사프로그램 정보를 제공하며, <br />
+                  게시판을 통해 직접 인원을 모집하여 함께 봉사프로그램에 참가 할 수 있습니다.
+                </p>
+              </div>
+              <button type="button" class="collapsible" onclick="collapse(this);">Q. 모집 마감이후에는 신청이 불가능한가요?</button>
+              <div class="content">
+                <p><strong>A.</strong> 프로그램별로 상이하기 때문에 해당 프로그램의 담당자에게 문의해주시길 바랍니다.</p>
+              </div>
+              <button type="button" class="collapsible" onclick="collapse(this);">Q. 봉사실적 조회도 가능한가요?</button>
+              <div class="content">
+                <p><strong>A.</strong> 프로그램별로 실적인증을 받을 수 있으면 실적도회도 가능합니다.</p>
+              </div>
+              <button type="button" class="collapsible" onclick="collapse(this);">Q. 신청취소는 어떻게 하나요?</button>
+              <div class="content">
+                <p>
+                  <strong>A.</strong> 신청취소의 경우 신청내역 페이지에서 취소기간중에 취소하실 수 있습니다. <br />
+                  취소기간이 지났다면 해당 프로그램 담당자에게 재문의 바랍니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab" id="tab2">
+          <button id="write_bt"></button>
+          <div class="container">
+            <div class="notice_board">
+              <button id="write">글쓰기</button>
+              <!-- title 열 -->
+              <ul class="board_row title_row">
+                <li class="w70">번호</li>
+                <li class="w500">제목</li>
+                <li class="w120">작성자</li>
+                <li class="w120">작성일</li>
+                <li class="w100">조회</li>
+              </ul>
+              <!-- 게시글 추가로 들어오는 위치 -->
+            </div>
+
+            <!-- 페이지 블럭 -->
+            <div class="pagination">
+              <button class="before_move" onclick="before()">이전</button>
+              <div class="block">
+                <!-- 블럭 추가로 들어오는 위치 -->
+              </div>
+              <button class="next_move" onclick="next()">다음</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="inner">
+        <div class="right">
+          <h1 class="nanum">나눔 <span>메이트</span></h1>
+          <p>
+            나눔메이트는 사회에 기여하고자 하는 분들을 위한 소중한 커뮤니티입니다. <br />
+            서비스 이용약관 | 개인정보 처리방침
+            <br />
+            <br />
+            Copyright (C)나눔메이트. All rights reserved.
+          </p>
+        </div>
+        <div class="left">
+          <div class="tell"><img src="images/minju/tell.png" alt="tell" />문의하기</div>
+          <button class="oline">온라인문의</button>
+          <button class="checklist">참여정보확인</button>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function collapse(element) {
+        var allCollapsibles = document.querySelectorAll(".collapsible");
+        var allContents = document.querySelectorAll(".content");
+
+        // 모든 collapse를 순회하며 현재 클릭한 collapse가 아니면 닫아줍니다.
+        allCollapsibles.forEach(function (collapsible) {
+          if (collapsible !== element && collapsible.classList.contains("active")) {
+            collapsible.classList.remove("active");
+            collapsible.nextElementSibling.style.maxHeight = null;
+          }
+        });
+
+        // 클릭한 collapse의 다음 요소인 content를 가져옵니다.
+        var content = element.nextElementSibling;
+
+        // 클릭한 collapse에 active 클래스를 toggle하여 활성화 상태를 전환합니다.
+        element.classList.toggle("active");
+
+        // 클릭한 collapse의 다음 요소인 content에 대해 활성화 상태를 전환합니다.
+        if (element.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = null;
+        }
+      }
+
+      // 햄버거 아이콘을 클릭하면 모바일 메뉴 리스트를 토글합니다.
+      document.querySelector(".m-bt").addEventListener("click", function () {
+        document.querySelector(".nav-mb").classList.toggle("active");
+        const htmlRoot = document.querySelector("html");
+        const state = this.classList.contains("ani");
+        if (state) {
+          // 햄버거 버튼을 눌렀을 때 x가 보이도록 클래스를 추가합니다.
+          this.classList.remove("ani");
+          // 메뉴가 나타날 때 스크롤이 되지 않도록 설정합니다.
+          htmlRoot.classList.remove("active");
+          // top-nav의 이미지가 보이도록 설정합니다.
+          document.querySelector(".top-nav img").style.visibility = "visible";
+        } else {
+          // 햄버거 버튼을 눌렀을 때 x가 사라지도록 클래스를 제거합니다.
+          this.classList.add("ani");
+          // 메뉴가 나타날 때 스크롤이 되지 않도록 설정합니다.
+          htmlRoot.classList.add("active");
+          // top-nav의 이미지가 안 보이도록 설정합니다.
+          document.querySelector(".top-nav img").style.visibility = "hidden";
+        }
+      });
+
+      // 서브 탭 앵커 태그
+      const subTabNav = document.querySelectorAll(".sub_tab_nav a");
+      // 메인 탭 앵커 태그
+      const tabNav = document.querySelectorAll(".tab_nav a");
+      // 메인 탭 리스트
+      const tabNavLi = document.querySelectorAll(".tab_nav li");
+
+      // 서브 탭 클릭 이벤트 핸들러
+      subTabNav.forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = this.getAttribute("href");
+
+          // 해당 서브 탭 활성화
+          document.querySelector(target).classList.add("active");
+          document.querySelector(target).previousElementSibling.classList.remove("active");
+          document.querySelector(target).nextElementSibling.classList.remove("active");
+          this.closest("li").classList.add("active");
+          this.closest("li").previousElementSibling.classList.remove("active");
+          this.closest("li").nextElementSibling.classList.remove("active");
+        });
+      });
+
+      // 메인 탭 클릭 이벤트 핸들러
+      tabNav.forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = this.getAttribute("href");
+
+          // 해당 메인 탭 활성화
+          document.querySelector(target).classList.add("active");
+          document.querySelector(target).previousElementSibling.classList.remove("active");
+          document.querySelector(target).nextElementSibling.classList.remove("active");
+          this.closest("li").classList.add("active");
+          // this.closest('li').previousElementSibling.classList.remove("active");
+          this.closest("li").nextElementSibling.classList.remove("active");
+
+          // 서브 탭 유지 또는 첫 번째 서브 탭 활성화
+          const subTabActive = document.querySelector(target + " .sub_tab_nav li.active");
+          if (!subTabActive) {
+            document.querySelector(target + " .sub_tab_nav li:first-child a").click();
+          } else {
+            subTabActive.querySelector("a").click();
+          }
+        });
+      });
+
+      // 페이지 로드 시 첫 번째 탭 활성화
+      const mainTabActive = document.querySelector(".tab_nav li.active");
+      if (!mainTabActive) {
+        document.querySelector(".tab_nav li:first-child a").click();
+      } else {
+        mainTabActive.querySelector("a").click();
+      }
+
+      //    총 게시글 수
+      let totalPage = 120;
+      //  한 페이지 당 출력되는 게시글 갯수
+      let page_num = 12;
+      //   한번에 출력될 수 있는 최대 블록 수
+      // ex ) [1][2][3][4][5] -> 블록
+      let block_num = 10;
+      // 블록의 총 수를 계산한다.
+      let total_block = totalPage % 20 == 0 ? totalPage / 20 : totalPage / 20 + 1;
+      // 현재 블록 위치를 알려준다
+      let current_block = 1;
+      /*
+게시글 데이터를 담고 있는 객체 배열
+번호 : data[게시글 번호].notice_num
+제목 : data[게시글 번호].title
+작성자 : data[게시글 번호].writer
+작성일 : data[게시글 번호].date_created
+조회 : data[게시글 번호].Lookkup_num
+*/
+      let data = new Array();
+      const topics = [
+        "[환경]환경정비지원 단체지원자 모집",
+        "[생활편의]5월 25일(일) 오후 교육봉사 가실 분 1분 더 구합니다.",
+        "[기타]5월말 추가인원모집",
+        "[교육]5월말 추가인원모집",
+        "[교육]5월 25일(일)~26일(일) 가실 분 모집합니다~",
+        "[문화행사]행사지원 추가인원모집",
+        "[교육]5월말 추가인원모집",
+        "[기타]벽화길조성 지원자추가 모집",
+        "[교육]5월말 추가인원모집",
+        "[교육]6월 마지막주 주말 마지막 한자리 남았습니다~!",
+        "[교육]5월말 추가인원모집",
+        "[교육]6월 1일 중구 같이 봉사하실 분들 구합니다.",
+      ];
+
+      const writers = ["kang1234", "nanum7251", "blue8899", "seunga11", "star7774", "master4561", "jack7785", "john444", "julie7777", "pro2564", "seventeen88", "student98"];
+
+      const dates = ["2024-04-14", "2024-04-15", "2024-04-15", "2024-04-16", "2024-04-20", "2024-04-29", "2024-04-30", "2024-05-08", "2024-05-09", "2024-05-10", "2024-05-11", "2024-05-12"];
+
+      // 초기 12개의 데이터 입력
+      for (let i = 1; i <= 12; i++) {
+        data[i] = {
+          notice_num: i,
+          title: topics[i - 1],
+          writer: writers[i - 1],
+          date_created: dates[i - 1],
+          Lookkup_num: Math.floor(Math.random() * 100) + 1, // 1부터 100 사이의 랜덤 조회수 생성
+        };
+      }
+
+      // 나머지 5번 반복하여 데이터 추가
+      for (let i = 13; i <= 120; i++) {
+        let dataIndex = (i - 1) % 12; // 12개 데이터를 순환하도록 인덱스 조정
+        data[i] = {
+          notice_num: i,
+          title: topics[dataIndex],
+          writer: writers[dataIndex],
+          date_created: dates[dataIndex],
+          Lookkup_num: Math.floor(Math.random() * 100) + 1, // 1부터 100 사이의 랜덤 조회수 생성
+        };
+      }
+
+      // 게시글 데이터 출력하기
+      // 매개변수 : 선택 블럭
+      function post_data_print(block) {
+        // 초기화
+        // 게시글 title 제외하고 모두 제거
+        let post_list = document.querySelectorAll(".data_row");
+        post_list.forEach(function (item) {
+          item.remove();
+        });
+
+        // 게시글 출력 공간
+        let notice_board = document.querySelector(".notice_board");
+        // 출력 첫 페이지 번호
+        let start = totalPage - page_num * (block - 1);
+        for (let i = start; i >= 1 && i > start - page_num; i--) {
+          // 게시글 데이터 가져와서 게시글 요소 생성 및 추가
+          // 번호, 제목, 작성자, 작성일, 조회수, 좋아요
+          // data[i].notice_num data[i].title data[i].writer data[i].date_created data[i].Lookkup_num data[i].like
+
+          let post = document.createElement("ul");
+          post.className = "board_row";
+          post.className = "data_row";
+
+          let classname = ["w70", "w500", "w120", "w120", "w100"];
+
+          let post_data = [data[i].notice_num, data[i].title, data[i].writer, data[i].date_created, data[i].Lookkup_num, data[i].like];
+
+          //게시글 생성
+          for (let j = 0; j < classname.length; j++) {
+            let li = document.createElement("li");
+            li.className = classname[j];
+            li.textContent = post_data[j];
+            post.appendChild(li);
+          }
+
+          // 게시글 추가
+          notice_board.appendChild(post);
+        }
+      }
+
+      // 블럭 출력하기
+      // 매개변수 : 가장 앞에 오는 블럭
+      function block_print(front_block) {
+        /*
+    1. 이전, 다음 블럭 속성 처리
+    2. 기존 블럭 모두 삭제
+    3. 범위 안의 블럭 생성 및 추가
+    */
+        current_block = front_block;
+
+        // 이전으로 갈 블럭이 없으면
+        if (front_block <= 1) {
+          document.querySelector(".before_move").style.visibility = "hidden";
+        } else {
+          document.querySelector(".before_move").style.visibility = "visible";
+        }
+
+        // 다음으로 갈 블럭이 없으면
+        if (front_block + block_num >= total_block) {
+          document.querySelector(".next_move").style.visibility = "hidden";
+        } else {
+          document.querySelector(".next_move").style.visibility = "visible";
+        }
+
+        // 블럭을 추가할 공간
+        let block_box = document.querySelector(".block");
+        // 기존 블럭 모두 삭제
+        block_box.replaceChildren();
+
+        console.log("remove");
+
+        //front_block부터 total_block 또는 block_num까지 생성 및 추가
+        for (let i = front_block; i <= total_block && i < front_block + block_num; i++) {
+          console.log("add element");
+
+          // 버튼을 생성한다.
+          let button = document.createElement("button");
+          button.textContent = i;
+          // 버튼을 클릭하면 게시글이 변경되는 이벤트 추가
+          button.addEventListener("click", function (event) {
+            post_data_print(i);
+          });
+          // 블럭에 추가한다.
+          block_box.appendChild(button);
+        }
+      }
+
+      function before() {
+        block_print(current_block - block_num);
+        console.log("이전");
+      }
+
+      function next() {
+        block_print(current_block + block_num);
+        console.log("다음");
+      }
+      // 화면 로드 시 실행되는 이벤트
+      window.onload = function () {
+        // 게시글 데이터 출력하기
+        post_data_print(1);
+
+        // 블럭 출력하기
+        block_print(1);
+      };
+    </script>
+  </body>
+</html>
