@@ -80,7 +80,7 @@ a {
 }
 .info h3 {
   display: flex;
-  margin-top: 30px;
+  margin-top: 49px;
   font-size: 18px;
   font-weight: 700;
   margin-left: 5px;
@@ -302,7 +302,8 @@ a {
 
 /* 지도 */
 .iframe-container {
-  padding-top: 80px;
+    padding-top: 51px;
+    margin-bottom: 79px;
   display: block; /* flex 또는 block을 사용하여 요소를 수평 중앙 정렬 가능 */
   width: 100%; /* 최대 너비 100% */
   /* max-width: 600px;  */
@@ -364,7 +365,13 @@ a {
 @media all and (max-width: 580px) {
   .iframe-container {
     aspect-ratio: 3 / 3; /* 가로 세로 비율 유지 */
+    margin-bottom: 0;
   }
+}
+@media all and  (max-width: 480px) {
+    .iframe-container {
+        aspect-ratio: 3 / 4;
+    }
 }
 @media all and (max-width: 450px) {
   .info-inner {
@@ -385,6 +392,9 @@ a {
     top: 63px;
     left: 34px;
   }
+  .iframe-container {
+    margin-top: 34px;
+}
 }
 @media all and (max-width: 360px) {
   .res {
